@@ -1,0 +1,22 @@
+{
+  "name": "autocomplete",
+  "version": "1.0.0",
+  "description": "autocomplete javascript library",
+  "main": "index.js",
+  "repository": "https://github.com/caias/autocomplete.git",
+  "author": "caias <caias1018@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "7.6.0",
+    "@babel/preset-env": "7.6.0",
+    "babel-loader": "8.0.6",
+    "css-loader": "3.2.0",
+    "express": "4.17.1",
+    "html-webpack-plugin": "3.2.0",
+    "mini-css-extract-plugin": "0.8.0",
+    "style-loader": "1.0.0",
+    "webpack": "4.39.3",
+    "webpack-cli": "3.3.8",
+    "webpack-merge": "4.2.2"
+  }
+}

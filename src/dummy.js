@@ -1,0 +1,1 @@
+exports.emailList = ['naver.com', 'hanmail.net', 'nate.com', 'gmail.com', 'lycos.co.kr', 'yahoo.co.kr', 'empal.com', 'dreamwiz.com', 'paran.com', 'korea.com', 'chol.com', 'hanmir.com', 'hanafos.com', 'freechal.com', 'hotmail.com', 'netian.com'];

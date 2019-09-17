@@ -2,7 +2,7 @@
 
 require('./otom.css');
 
-const emailList = ['naver.com', 'hanmail.net', 'nate.com', 'gmail.com', 'lycos.co.kr', 'yahoo.co.kr', 'empal.com', 'dreamwiz.com', 'paran.com', 'korea.com', 'chol.com', 'hanmir.com', 'hanafos.com', 'freechal.com', 'hotmail.com', 'netian.com'];
+const { emailList } = require('./dummy');
 
 const defaultOptions = {
   container: '',
@@ -68,15 +68,15 @@ class Otom {
     return resultUl;
   }
 
-  updateList() {
+  updateList(data) {
     if (!this.isOpen()) { return; }
+    this.data = data;
 
     const result = document.querySelector('[data-otom-el=result]');
-    const matchData = this.getMatchData(this.data);
 
-    if (matchData.length) {
-      result.innerHTML = this.makeList(matchData).outerHTML;
-      this.listSelect();
+    if (data.length) {
+      result.innerHTML = this.makeList(data).outerHTML;
+      this.itemClick();
     } else {
       this.close();
     }
@@ -88,7 +88,10 @@ class Otom {
   }
 
   close() {
+    if (!this.isOpen()) { return; }
+
     const result = document.querySelector('[data-otom-el=result]');
+
     this.container.removeChild(result);
     this.input.setAttribute('aria-expanded', 'false');
     this.index = -1;
@@ -116,13 +119,19 @@ class Otom {
     return val.indexOf('@') > 0; 
   }
 
-  onChange() {
+  onChange(e) {
+    const key = e.keyCode;
+    const matchData = this.getMatchData(emailList);
+
     if (this.type === 'email' && !this.isOpen()) {
       this.getEmailValid() && this.open();
     } else if (!this.isOpen()) {
       this.open();
     }
-    this.updateList();
+    this.updateList(matchData);
+    this.keyboardHandler(key);
+    
+    
   }
 
   isOpen() {
@@ -141,7 +150,12 @@ class Otom {
     return this.input.value = selectedText;
   }
 
-  listSelect() {
+  itemEnter() {
+    this.replaceValue(this.getDataText(this.index));
+    this.close();
+  }
+
+  itemClick() {
     const items = this.container.querySelectorAll('[data-otom-el=item');
 
     items.forEach((anchor, index) => {
@@ -157,6 +171,47 @@ class Otom {
     });
   }
 
+  nextIndex(index, length) {
+    return index < length ? this.index + 1 : this.index;
+  }
+
+  prevIndex(index, length) {
+    return index > length ? this.index - 1 : this.index;
+  }
+
+  keyboardMove(index, type) {
+    const items = this.container.querySelectorAll('[aria-selected]');
+    const itemsLength = type === 'next' ? items.length - 1 : 0;
+    const liHeight = items[0].offsetHeight;
+    const ul = this.container.querySelector('ul');
+    const ulHeight = ul.offsetHeight;
+
+    if (index > -1) {
+      items[index].setAttribute('aria-selected', 'false');
+    }
+
+    this.index = this[`${type}Index`](index, itemsLength);
+    items[this.index].setAttribute('aria-selected', 'true');    
+    ul.scrollTop = items[this.index].offsetTop - ulHeight + liHeight;
+  }
+
+  keyboardHandler(key) {    
+    if (!this.isOpen()) { return; }
+    
+    if (key === 38) {
+      this.keyboardMove(this.index, 'prev');
+      // down
+    } else if (key === 40) {
+      this.keyboardMove(this.index, 'next');
+      // enter
+    } else if (key === 13) {
+      this.itemEnter();
+      // esc
+    } else if (key === 27) {
+      this.isOpen() && this.close();
+    }
+  }
+
   create() {
     this.setAttrList(inputAttrs, this.input);
   }
@@ -168,7 +223,8 @@ class Otom {
 
   init() {
     this.setAttrList(inputAttrs, this.input);
-    this.input.addEventListener('keyup', () => { this.onChange(); });
+    this.input.addEventListener('keyup', (e) => { this.onChange(e); });
+    this.input.addEventListener('blur', () => { this.close(); });
   }
 
 }

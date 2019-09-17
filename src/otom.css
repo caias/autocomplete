@@ -35,26 +35,28 @@ li{
 }
 
 [data-otom-el=result]{
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+[data-otom-el=result] ul{
   background-color: #fff;
   border-style: solid;
   border-width: 0 1px 1px;
   border-color: lightgray;
-  position: absolute;
-  left: 0;
-  right: 0;
-  max-height: 200px;
+  max-height: 209px;
   overflow-y: auto;
 }
 
-[data-otom-el="item"] a{
+[data-otom-el="item"]{
   display:block;
   padding: 5px;
 }
 
-[data-otom-el="item"] a:hover {
+[data-otom-el="item"]:hover,
+[data-otom-el="item"]:focus,
+[data-otom-el="item"].active,
+[aria-selected="true"] {
   background-color: lightGray;
-}
-
-[aria-selected=true]{
-  color: red;
 }

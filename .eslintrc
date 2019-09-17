@@ -23,7 +23,8 @@
     "setInterval": false,
     "setTimeout": false,
     "window": false,
-    "XMLHttpRequest": false
+    "XMLHttpRequest": false,
+    "Otom": true
   },
   "rules": {
     "camelcase": [

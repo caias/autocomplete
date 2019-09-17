@@ -7,21 +7,22 @@ const emailList = ['naver.com', 'hanmail.net', 'nate.com', 'gmail.com', 'lycos.c
 const defaultOptions = {
   container: '',
   input: '',
-  result: '',
   data: '',
   type: '',
 };
 
-const inputAttribute = {
+const inputAttrs = {
   'autocomplete': 'off',
   'aria-expanded': 'false',
-  'role': 'combobox',
   'aria-autocomplete': 'both',
+  'role': 'combobox',
 };
 
-const anchorAttribute = {
-  'href': 'javascript:void(0);',
-  'aria-selected': 'false',
+const resultAttrs = {
+  'data-otom-el': 'result',
+  'aria-atomic': 'true',
+  'aria-live': 'assertive',
+  'role': 'listbox',
 };
 
 class Otom {
@@ -29,43 +30,34 @@ class Otom {
     this.props = Object.assign({}, defaultOptions, opts);
     this.container = document.querySelector(this.props.container || '[data-otom-el=container]');
     this.input = this.container.querySelector(this.props.input || '[data-otom-el=input]');
-    this.result = document.createElement('div');
+    this.result = this.container.querySelector(this.props.result || '[data-otom-el=result]');
+    this.type = this.props.type || 'default';
+    this.data = this.props.data || emailList;
     this.index = -1;
     this.isOpened = false;
-    this.data = this.props.data || emailList;
   }
 
   setAttrList(list = {}, target) {
     Object.keys(list).forEach(key => target.setAttribute(key, list[key]));
   }
 
-  removeAttrList(list = {}, target) {
-    Object.keys(list).forEach(key => target.removeAttribute(key));
+  makeContainer() {
+    const div = document.createElement('div');
+    Object.keys(resultAttrs).forEach(key => div.setAttribute(key, resultAttrs[key]));
+    div.innerHTML = this.makeList(this.data).outerHTML;
+    this.container.append(div);
   }
 
-  init() {
-    // this.setAttrList(resultWrapAttribute, this.result);
-    this.makeContainer(this.data);
-    const offBtn = document.querySelector('[data-button=off]');
-    const onBtn = document.querySelector('[data-button=on]');
-    offBtn.addEventListener('click', () => { this.removeList(); });
-    onBtn.addEventListener('click', () => { this.openList(this.data); });
-  }
-
-  makeContainer(data) {
-    const resultWrapAttribute = {
-      'style': `top:${this.input.offsetHeight}px`,
-      'data-otom-el': 'result',
-    };
-    this.setAttrList(resultWrapAttribute, this.result);
-    this.result.append(this.updateList(data));
-  }
-
-  updateList(data = []) {
+  makeList(data = []) {
     const dataLength = data.length;
     const resultUl = document.createElement('ul');
 
     for (let i = 0; i < dataLength; i++) {
+      const anchorAttribute = {
+        'href': 'javascript:void(0);',
+        'aria-selected': 'false',
+        'data-otom-el': 'item',
+      };
       const resultList = document.createElement('li');
       const resultAnchor = document.createElement('a');
 
@@ -77,27 +69,82 @@ class Otom {
     return resultUl;
   }
 
-  getRegex(type) {
-    
+  updateList() {
+    if (!this.getOpen()) { return; }
+
+    const result = document.querySelector('[data-otom-el=result]');
+    const matchData = this.getMatchData(this.data);
+
+    if (matchData.length) {
+      result.innerHTML = this.makeList(matchData).outerHTML;
+    } else {
+      this.close();
+    }
   }
 
-  openList() {
-    this.container.append(this.result);
+  open() {
     this.isOpened = true;
+    this.makeContainer();
   }
-  
-  removeList() {
-    this.container.removeChild(this.result);
-    this.isOpened = true;
+
+  close() {
+    const result = document.querySelector('[data-otom-el=result]');
+    this.container.removeChild(result);
+    this.isOpened = false;
+    this.index = -1;
+  }
+
+  getRegex() {
+    const val = this.input.value;
+    if (this.type === 'email') {
+      const charCheck = val.indexOf('@') + 1;
+      const regex = val.slice(charCheck);
+      return new RegExp(`${regex}`);
+    } else if (val === '') {
+      return new RegExp('$^');
+    }
+    return new RegExp(val);
+  }
+
+  getMatchData(data = []) {
+    const regex = this.getRegex();
+    return data.filter(value => regex.test(value));
+  }
+
+  getEmailValid() {
+    const val = this.input.value;
+    return val.indexOf('@') > 0; 
+  }
+
+  onChange() {
+    if (this.type === 'email' && !this.getOpen()) {
+      this.getEmailValid() && this.open();
+    } else if (!this.getOpen()) {
+      this.open();
+    }
+    this.updateList();
+  }
+
+  getOpen() {
+    return this.isOpened;
+  }
+
+  replaceValue() {
+
   }
 
   create() {
-    this.setAttrList(inputAttribute, this.input);
+    this.setAttrList(inputAttrs, this.input);
   }
 
   destroy() {
     this.props = {};
-    this.removeAttrList(inputAttribute, this.input);
+    Object.keys(inputAttrs).forEach(key => this.input.removeAttribute(key));
+  }
+
+  init() {
+    this.setAttrList(inputAttrs, this.input);
+    this.input.addEventListener('keyup', () => { this.onChange(); });
   }
 
 }

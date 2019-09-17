@@ -8,7 +8,7 @@ const defaultOptions = {
   container: '',
   input: '',
   data: '',
-  type: '',
+  type: 'email',
 };
 
 const inputAttrs = {
@@ -34,7 +34,6 @@ class Otom {
     this.type = this.props.type || 'default';
     this.data = this.props.data || emailList;
     this.index = -1;
-    this.isOpened = false;
   }
 
   setAttrList(list = {}, target) {
@@ -70,27 +69,28 @@ class Otom {
   }
 
   updateList() {
-    if (!this.getOpen()) { return; }
+    if (!this.isOpen()) { return; }
 
     const result = document.querySelector('[data-otom-el=result]');
     const matchData = this.getMatchData(this.data);
 
     if (matchData.length) {
       result.innerHTML = this.makeList(matchData).outerHTML;
+      this.listSelect();
     } else {
       this.close();
     }
   }
 
   open() {
-    this.isOpened = true;
+    this.input.setAttribute('aria-expanded', 'true');
     this.makeContainer();
   }
 
   close() {
     const result = document.querySelector('[data-otom-el=result]');
     this.container.removeChild(result);
-    this.isOpened = false;
+    this.input.setAttribute('aria-expanded', 'false');
     this.index = -1;
   }
 
@@ -117,20 +117,44 @@ class Otom {
   }
 
   onChange() {
-    if (this.type === 'email' && !this.getOpen()) {
+    if (this.type === 'email' && !this.isOpen()) {
       this.getEmailValid() && this.open();
-    } else if (!this.getOpen()) {
+    } else if (!this.isOpen()) {
       this.open();
     }
     this.updateList();
   }
 
-  getOpen() {
-    return this.isOpened;
+  isOpen() {
+    return this.input.getAttribute('aria-expanded') === 'true';
   }
 
-  replaceValue() {
+  getDataText(index) {
+    return this.data[index];
+  }
 
+  replaceValue(selectedText) {
+    if (this.type === 'email') {
+      const inputvalue = this.input.value.split('@');
+      return this.input.value = `${inputvalue[0]}@${selectedText}`;
+    }
+    return this.input.value = selectedText;
+  }
+
+  listSelect() {
+    const items = this.container.querySelectorAll('[data-otom-el=item');
+
+    items.forEach((anchor, index) => {
+      anchor.addEventListener('click', (e) => {
+        const target = e.currentTarget;
+        items.forEach((item) => {
+          item.setAttribute('aria-selected', 'false');
+        });
+        target.setAttribute('aria-selected', 'true');
+        this.replaceValue(this.getDataText(index));
+        this.close();
+      });
+    });
   }
 
   create() {

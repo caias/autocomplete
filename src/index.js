@@ -14,7 +14,8 @@ const defaultOptions = {
 const inputAttrs = {
   'autocomplete': 'off',
   'aria-expanded': 'false',
-  'aria-autocomplete': 'both',
+  'aria-autocomplete': 'list',
+  'aria-haspopup': 'listbox',
   'role': 'combobox',
 };
 
@@ -68,7 +69,7 @@ class Otom {
     return resultUl;
   }
 
-  updateList(data) {
+  updateList(data = []) {
     if (!this.isOpen()) { return; }
     this.data = data;
 
@@ -130,8 +131,6 @@ class Otom {
     }
     this.updateList(matchData);
     this.keyboardHandler(key);
-    
-    
   }
 
   isOpen() {
@@ -172,16 +171,17 @@ class Otom {
   }
 
   nextIndex(index, length) {
-    return index < length ? this.index + 1 : this.index;
+    return index < length ? this.index + 1 : 0;
   }
 
   prevIndex(index, length) {
-    return index > length ? this.index - 1 : this.index;
+    this.index = index - 1;
+    return this.index === -1 ? length : this.index;
   }
 
   keyboardMove(index, type) {
     const items = this.container.querySelectorAll('[aria-selected]');
-    const itemsLength = type === 'next' ? items.length - 1 : 0;
+    const itemLength = items.length - 1;
     const liHeight = items[0].offsetHeight;
     const ul = this.container.querySelector('ul');
     const ulHeight = ul.offsetHeight;
@@ -190,7 +190,7 @@ class Otom {
       items[index].setAttribute('aria-selected', 'false');
     }
 
-    this.index = this[`${type}Index`](index, itemsLength);
+    this.index = this[`${type}Index`](index, itemLength);
     items[this.index].setAttribute('aria-selected', 'true');    
     ul.scrollTop = items[this.index].offsetTop - ulHeight + liHeight;
   }
@@ -199,6 +199,7 @@ class Otom {
     if (!this.isOpen()) { return; }
     
     if (key === 38) {
+      // up
       this.keyboardMove(this.index, 'prev');
       // down
     } else if (key === 40) {

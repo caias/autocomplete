@@ -98,6 +98,14 @@ class Otom {
     this.index = -1;
   }
 
+  isSelected() {
+    return this.index > -1;
+  }
+
+  isOpen() {
+    return this.input.getAttribute('aria-expanded') === 'true';
+  }
+
   getRegex() {
     const val = this.input.value;
     if (this.type === 'email') {
@@ -131,10 +139,7 @@ class Otom {
     }
     this.updateList(matchData);
     this.keyboardHandler(key);
-  }
-
-  isOpen() {
-    return this.input.getAttribute('aria-expanded') === 'true';
+    console.log(this.index);
   }
 
   getDataText(index) {
@@ -150,6 +155,9 @@ class Otom {
   }
 
   itemEnter() {
+    if (!this.isSelected()) {
+      return;
+    }
     this.replaceValue(this.getDataText(this.index));
     this.close();
   }
@@ -175,7 +183,7 @@ class Otom {
   }
 
   prevIndex(index, length) {
-    this.index = index - 1;
+    this.index = index === -1 ? index : index - 1;
     return this.index === -1 ? length : this.index;
   }
 
@@ -186,7 +194,7 @@ class Otom {
     const ul = this.container.querySelector('ul');
     const ulHeight = ul.offsetHeight;
 
-    if (index > -1) {
+    if (this.isSelected()) {
       items[index].setAttribute('aria-selected', 'false');
     }
 

@@ -26,6 +26,13 @@ const resultAttrs = {
   'role': 'listbox',
 };
 
+const KEYS = {
+  ENTER: 13,
+  ESC: 27,
+  UP: 38,
+  DOWN: 40,
+};
+
 class Otom {
   constructor(opts = {}) {
     this.props = Object.assign({}, defaultOptions, opts);
@@ -139,7 +146,6 @@ class Otom {
     }
     this.updateList(matchData);
     this.keyboardHandler(key);
-    console.log(this.index);
   }
 
   getDataText(index) {
@@ -206,17 +212,17 @@ class Otom {
   keyboardHandler(key) {    
     if (!this.isOpen()) { return; }
     
-    if (key === 38) {
+    if (key === KEYS.UP) {
       // up
       this.keyboardMove(this.index, 'prev');
       // down
-    } else if (key === 40) {
+    } else if (key === KEYS.DOWN) {
       this.keyboardMove(this.index, 'next');
       // enter
-    } else if (key === 13) {
+    } else if (key === KEYS.ENTER) {
       this.itemEnter();
       // esc
-    } else if (key === 27) {
+    } else if (key === KEYS.ESC) {
       this.isOpen() && this.close();
     }
   }

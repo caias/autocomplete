@@ -42,6 +42,7 @@ class Otom {
     this.type = this.props.type || 'default';
     this.data = this.props.data || emailList;
     this.index = -1;
+    this.inputValue = null;
   }
 
   setAttrList(list = {}, target) {
@@ -83,6 +84,7 @@ class Otom {
     const result = document.querySelector('[data-otom-el=result]');
 
     if (data.length) {
+      this.index = -1;
       result.innerHTML = this.makeList(data).outerHTML;
       this.itemClick();
     } else {
@@ -135,8 +137,7 @@ class Otom {
     return val.indexOf('@') > 0; 
   }
 
-  onChange(e) {
-    const key = e.keyCode;
+  onChange() {
     const matchData = this.getMatchData(emailList);
 
     if (this.type === 'email' && !this.isOpen()) {
@@ -145,7 +146,6 @@ class Otom {
       this.open();
     }
     this.updateList(matchData);
-    this.keyboardHandler(key);
   }
 
   getDataText(index) {
@@ -209,14 +209,18 @@ class Otom {
     ul.scrollTop = items[this.index].offsetTop - ulHeight + liHeight;
   }
 
-  keyboardHandler(key) {    
-    if (!this.isOpen()) { return; }
-    
+  keyValidation(key) {
+    return key === KEYS.ENTER || key === KEYS.ESC || key === KEYS.UP || key === KEYS.DOWN;
+  }
+
+  keyboardHandler(e, key) {
     if (key === KEYS.UP) {
       // up
+      e.preventDefault();
       this.keyboardMove(this.index, 'prev');
       // down
     } else if (key === KEYS.DOWN) {
+      e.preventDefault();
       this.keyboardMove(this.index, 'next');
       // enter
     } else if (key === KEYS.ENTER) {
@@ -238,7 +242,23 @@ class Otom {
 
   init() {
     this.setAttrList(inputAttrs, this.input);
-    this.input.addEventListener('keyup', (e) => { this.onChange(e); });
+    this.input.addEventListener('keyup', (e) => {
+      const key = e.keyCode;
+      const currentValue = e.currentTarget.value;
+
+      if (this.inputValue === currentValue) { return; }
+
+      this.inputValue = currentValue;
+      key !== KEYS.ENTER && this.onChange(); 
+    });
+    this.input.addEventListener('keydown', (e) => {
+      const key = e.keyCode;
+      if (!this.keyValidation(key)) {
+        return;
+      } else {
+        this.isOpen() && this.keyboardHandler(e, key);
+      }
+    });
     this.input.addEventListener('blur', () => { this.close(); });
   }
 

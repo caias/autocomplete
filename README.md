@@ -1,18 +1,7 @@
 # Otom
 
-input auto-complete library using vanilla javascript (es6)
-
-## Usage
-
-### install
-
-```bash
-# npm
-npm i Otom
-
-# yarn
-yarn add Otom
-```
+input email auto-complete library using vanilla javascript (es6)  
+**No Dependency**
 
 ### Usage
 

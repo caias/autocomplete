@@ -1,0 +1,8 @@
+{
+  "source": "./lib",
+  "destination": "./docs",
+  "plugins": [
+    {"name": "../../CommonParser.js"},
+    {"name": "esdoc-standard-plugin"}
+  ]
+}

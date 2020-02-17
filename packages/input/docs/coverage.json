@@ -1,0 +1,18 @@
+{
+  "coverage": "68.75%",
+  "expectCount": 16,
+  "actualCount": 11,
+  "files": {
+    "lib/input.js": {
+      "expectCount": 16,
+      "actualCount": 11,
+      "undocumentLines": [
+        24,
+        25,
+        66,
+        67,
+        70
+      ]
+    }
+  }
+}

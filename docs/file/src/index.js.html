@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/index.js | fe-otom</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="autocomplete module using javascript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="fe-otom"><meta property="twitter:description" content="autocomplete module using javascript"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/index.js~Otom.html">Otom</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * autocomplete main module
+ *
+ * @name Otom
+ * @author caias
+ * @contributors kern86
+ * @since 2019.08.05 - draft
+ * @example
+ * // index.html
+ * &lt;div data-otom-el=&quot;container&quot;&gt;
+ *  &lt;input type=&quot;email&quot; data-otom-el=&quot;input&quot; /&gt;
+ *  &lt;div data-otom-el=&quot;result&quot;&gt;&lt;/div&gt;
+ * &lt;/div&gt;
+ *
+ * //js
+ * const Otom = require(&apos;Otom&apos;);
+ * const input = new Otom({
+ *  el: &apos;[data-otom-el=input]&apos;,
+ *  container: &apos;[data-otom-el=container]&apos;,
+ *  result: &apos;[data-otom-el=result]&apos;,
+ *  type: &apos;email&apos;,
+ * });
+ */
+&apos;use strict&apos;;
+
+const Input = require(&apos;@otom/input&apos;);
+const Result = require(&apos;@otom/result&apos;);
+const { EVENTS, isExclude } = require(&apos;@otom/event&apos;);
+const { getMatchted } = require(&apos;@otom/validation&apos;);
+const listTmpl = require(&apos;./templates/partials/list.hbs&apos;);
+const { emailList } = require(&apos;./dummy&apos;);
+
+/**
+ * otom options
+ * @memberof Otom
+ * @type {Object}
+ * @property {string} el target input element string
+ * @property {string} container target container element string
+ * @property {string} result result container element string
+ * @property {string} type autocomplete type
+ * @property {Object} xhrOption xhrRequest options
+ */
+const defaultOptions = {
+  el: &apos;[data-otom-el=input]&apos;,
+  container: &apos;[data-otom-el=container]&apos;,
+  result: &apos;[data-otom-el=result]&apos;,
+  type: &apos;email&apos;,
+  // xhr option
+  xhrOption: {
+    url: &apos;&apos;,
+    data: &apos;&apos;,
+  },
+};
+
+class Otom {
+  constructor(opts = {}) {
+    this.props = Object.assign({}, defaultOptions, opts);
+    const el = this.props.el;
+
+    if (!el) { throw new Error(&apos;[Otom] Error: options.el is not defined.&apos;); }
+  }
+
+  /**
+   * initialize
+   * @memberof Otom
+   */
+  init() {
+    this.inputInit();
+    this.resultInit();
+    // initial event binding
+    this.initHandler();
+  }
+
+  /**
+   * input initialize
+   * @memberof Otom
+   */
+  inputInit() {
+    // input initialize
+    this.input = new Input({
+      root: this.props.container,
+      base: this.props.el,
+      // onchange function
+      onChange: (val) =&gt; {
+        // value replace
+        const replace = new RegExp(`${val}`, &apos;gi&apos;);
+        // word matching
+        const matchingWord = val.match(replace);
+        const matchedData = getMatchted(val, this.props.type, emailList);
+
+        // data convert
+        const convertData = matchedData.map((item) =&gt; {
+          const cuttingWord = item.substring(val.length - (val.indexOf(&apos;@&apos;) + 1));
+
+          return {
+            dispVal: `&lt;strong&gt;${matchingWord}&lt;/strong&gt;${cuttingWord}`,
+            value: item,
+          };
+        });
+
+        this.result.update(convertData);
+        // send input data
+        return convertData;
+      },
+      // onfocus function
+      onFocus: () =&gt; {
+        this.result.reset(() =&gt; {
+          this.result.index = -1;
+        });
+      },
+      // onblur function
+      onBlur: () =&gt; {
+        if (this.input.isOpen()) {
+          return;
+        }
+        this.result.remove();
+      },
+      // onexclude function
+      onExclude: (code) =&gt; {
+        this.result.keyboardHandler(code);
+      },
+    });
+
+    // input &#xAC1D;&#xCCB4; &#xCD08;&#xAE30;&#xD654;
+    this.input.init();
+  }
+
+  /**
+   * result initialize
+   * @memberof Otom
+   */
+  resultInit() {
+    this.result = new Result({
+      root: this.props.container,
+      container: this.props.result,
+      listTmpl,
+      activeClass: &apos;on&apos;,
+      onResultSelected: (val) =&gt; {
+        this.input.replace(val, this.props.type).off();
+        this.result.remove();
+      },
+    });
+
+    // result &#xAC1D;&#xCCB4; &#xCD08;&#xAE30;&#xD654;
+    this.result.init();
+  }
+
+  /**
+   * initial event handler
+   * @memberof Otom
+   */
+  initHandler() {
+    // container &#xCD94;&#xCD9C;
+    const container = document.querySelector(this.props.container);
+
+    // container keydown &#xC774;&#xBCA4;&#xD2B8;
+    // container &#xC804;&#xCCB4;&#xC5D0; keydown &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xCE90;&#xCE58;&#xD558;&#xC5EC;, tab&#xD0A4;&#xB4F1;&#xC758; &#xC774;&#xBCA4;&#xD2B8;&#xC5D0; &#xB300;&#xC751;
+    container.addEventListener(EVENTS.KEY_DOWN, (e) =&gt; {
+      // keycode
+      const keyCode = e.keyCode;
+      // keycode&#xAC00; &#xC81C;&#xC678;&#xD560; &#xBC94;&#xC8FC;&#xC5D0; &#xC18D;&#xD574;&#xC788;&#xB294;&#xC9C0; &#xD655;&#xC778;
+      const isExcludeKey = isExclude(keyCode);
+
+      if (isExcludeKey) {
+        if (this.input.isOpen()) {
+          // input&#xB0B4; result&#xAC00; open &#xC0C1;&#xD0DC;&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC; preventDefault &#xC0AC;&#xC6A9;
+          e.preventDefault();
+
+          const args = [keyCode];
+          // input&#xC774; focus&#xAC00; &#xC544;&#xB2CC; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC; argument&#xC5D0; shiftKey &#xC0BD;&#xC785;
+          !this.input.isFocus &amp;&amp; args.push(e.shiftKey);
+
+          this.result.keyboardHandler.apply(this.result, args);
+        }
+      }
+    });
+  }
+
+  /**
+   * xhr request
+   *
+   * @memberof Otom
+   * @param {Object} opts xhr options
+   */
+  ajax(opts = {}) {
+    if (!opts.url) { throw new Error(&apos;[Otom/ajax] Error: url is not defined.&apos;); }
+
+    const xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = () =&gt; {
+      if (xhr.readyStatus === 4) {
+        if (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 400) {
+          typeof opts.success === &apos;function&apos; &amp;&amp; opts(xhr.responseText);
+        } else {
+          typeof opts.error === &apos;function&apos; &amp;&amp; opts(xhr.responseText);
+        }
+      }
+    };
+
+    xhr.open(opts.method || &apos;GET&apos;, opts.url, true);
+    xhr.send();
+  }
+
+}
+
+module.exports = Otom;</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

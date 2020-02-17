@@ -1,0 +1,17 @@
+{
+  "coverage": "78.94%",
+  "expectCount": 19,
+  "actualCount": 15,
+  "files": {
+    "lib/element.js": {
+      "expectCount": 19,
+      "actualCount": 15,
+      "undocumentLines": [
+        26,
+        27,
+        29,
+        30
+      ]
+    }
+  }
+}

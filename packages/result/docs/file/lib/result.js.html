@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">lib/result.js | @otom/result</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="&gt; TODO: description"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@otom/result"><meta property="twitter:description" content="&gt; TODO: description"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/result.js~Result.html">Result</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Element">Element</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">lib/result.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * autocomplete reulst list &#xBAA8;&#xB4C8;
+ *
+ * @author caias, kern86
+ * @since 2019.09.06 - draft
+ * @example
+ *  const Result = require(&apos;@otom/result&apos;);
+ *  const result = new Result({
+ *
+ *  });
+ */
+
+&apos;use strict&apos;;
+
+const Element = require(&apos;@otom/elements&apos;);
+const { KEYS, EVENTS } = require(&apos;@otom/event&apos;);
+
+/**
+ * result container DOM attribute
+ */
+const resultAttrs = {
+  &apos;aria-atomic&apos;: &apos;true&apos;,
+  &apos;aria-live&apos;: &apos;assertive&apos;,
+  &apos;role&apos;: &apos;listbox&apos;,
+};
+
+/**
+ * defaultProps
+ * @memberof Result
+ * @type {Object}
+ * @property {function} listTmpl list template
+ * @property {string} root root container
+ * @property {string} container result container
+ * @property {string} activeClass active class
+ * @property {function} onResultSelected result selected callback
+ */
+const defaultProps = {
+  listTmpl: null,
+  root: &apos;[data-otom-el=container]&apos;,
+  container: &apos;[data-otom-el=result]&apos;,
+  activeClass: &apos;&apos;,
+  onResultSelected: () =&gt; {},
+};
+
+/**
+ * Result
+ * @memberof result
+ *
+ */
+class Result extends Element {
+  constructor(opts = {}) {
+    const props = Object.assign({}, defaultProps, opts);
+    // Element Class &#xC0C1;&#xC18D;
+    super(props.container, props.root);
+    // props
+    this.props = props;
+    /**
+     * list template
+     * @memberof Result
+     * @type {function}
+     */
+    this.listTmpl = this.props.listTmpl;
+    /**
+     * result data index
+     * @memberof Result
+     * @type {number}
+     */
+    this.index = -1;
+
+    /**
+     * keyHandler function &#xBAA8;&#xC74C;
+     * @memberof Result
+     * @type {Object}
+     */
+    this.keyHandler = {
+      // cursor down
+      [KEYS.DOWN]: () =&gt; {
+        this.keyboardMove(this.index, &apos;next&apos;);
+      },
+      // cursor up
+      [KEYS.UP]: () =&gt; {
+        this.keyboardMove(this.index, &apos;prev&apos;);
+      },
+      // esc
+      [KEYS.ESC]: () =&gt; {
+        this.remove();
+      },
+      // enter
+      [KEYS.ENTER]: () =&gt; {
+        this.enterHandler();
+      },
+      // tab
+      [KEYS.TAB]: (isShift) =&gt; {
+        this.keyboardMove(this.index, isShift ? &apos;prev&apos; : &apos;next&apos;);
+      },
+    };
+  }
+
+  /**
+   * initiailize
+   * @memberof Result
+   */
+  init() {
+    this.setResultOffset().setAttrList(resultAttrs);
+  }
+
+  /**
+   * data &#xC874;&#xC7AC; &#xC720;&#xBB34;&#xC5D0; &#xB530;&#xB77C; item update &#xB610;&#xB294; remove&#xD55C;&#xB2E4;.
+   *
+   * @memberof Result
+   * @param {data} data regexp matched data
+   */
+  update(data) {
+    this.data = data;
+    if (data.length) {
+    // data&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xACBD;&#xC6B0; add
+      this.add(data);
+      this.index = -1;
+    // &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xACBD;&#xC6B0; remove
+    } else {
+      this.remove();
+    }
+  }
+
+  /**
+   * data&#xAC00; &#xC788;&#xC744; &#xC2DC;&#xC5D0; &#xC544;&#xC774;&#xD15C;&#xC744; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xD55C;&#xB2E4;
+   *
+   * @memberof Result
+   * @param {Array} data regexp matched data
+   */
+  add(data) {
+    // display data list &#xC0DD;&#xC131;
+    const dispList = data.map((item) =&gt; {
+      return item.dispVal;
+    });
+    // handlebars list &#xC0DD;&#xC131;
+    const list = this.listTmpl({ data: dispList });
+    // list append
+    this
+      .remove()
+      .append(this.base, list, () =&gt; {
+        this.clickHandler();
+      });
+  }
+
+  /**
+   * data&#xAC00; &#xC5C6;&#xC744;&#xC2DC;&#xC5D0; container&#xC548;&#xC5D0; &#xB3D4;&#xC744; &#xCD08;&#xAE30;&#xD654; &#xD55C;&#xB2E4;.
+   *
+   * @memberof Result
+   * @return {Result} result instance
+   */
+  remove() {
+    this.base.innerHTML = &apos;&apos;;
+    this.index = -1;
+    return this;
+  }
+
+  /**
+   * Target&#xC5D0; &#xB300;&#xD55C; class event&#xB97C; &#xC81C;&#xC5B4;&#xD55C;&#xB2E4;.
+   *
+   * @memberof Result
+   * @param {Element} el element
+   * @param {string} type event type
+   */
+  handleClass(el, type) {
+    const className = this.props.activeClass;
+    if (!className) { return; }
+
+    el.classList[type](className);
+  }
+
+  /**
+   * &#xACB0;&#xACFC; &#xB9AC;&#xC2A4;&#xD2B8; Click event
+   *
+   * @memberof Result
+   */
+  clickHandler() {
+    const items = document.querySelectorAll(&apos;[aria-selected]&apos;);
+
+    items.forEach((anchor, idx) =&gt; {
+      anchor.addEventListener(EVENTS.CLICK, (e) =&gt; {
+        const target = e.currentTarget;
+        this.reset();
+        target.setAttribute(&apos;aria-selected&apos;, &apos;true&apos;);
+        this.handleClass(target, &apos;add&apos;);
+        this.props.onResultSelected(this.getData(idx));
+
+      });
+    });
+  }
+
+  /**
+   * &#xD604;&#xC7AC; &#xC120;&#xD0DD;&#xB41C; &#xACB0;&#xACFC; &#xB9AC;&#xC2A4;&#xD2B8;&#xC758; aria-selected&#xB97C; &#xCD08;&#xAE30;&#xD654; &#xD55C;&#xB2E4; .
+   *
+   * @memberof Result
+   * @param {function} callback &#xCD08;&#xAE30;&#xD654; &#xD6C4;&#xC5D0; &#xC2E4;&#xD589; &#xC2DC;&#xD0AC; callback &#xD568;&#xC218;
+   */
+  reset(callback = () =&gt; {}) {
+    const items = document.querySelectorAll(&apos;[aria-selected]&apos;);
+    items.forEach((item) =&gt; {
+      item.setAttribute(&apos;aria-selected&apos;, &apos;false&apos;);
+      this.handleClass(item, &apos;remove&apos;);
+    });
+
+    callback();
+  }
+
+  /**
+   * &#xACB0;&#xACFC; &#xB9AC;&#xC2A4;&#xD2B8; Enter Event
+   *
+   * @memberof Result
+   */
+  enterHandler() {
+    if (!this.isSelected()) { return; }
+    this.props.onResultSelected(this.getData(this.index));
+  }
+
+  /**
+   * &#xD0A4;&#xBCF4;&#xB4DC; DOWN&#xC2DC; &#xB2E4;&#xC74C; &#xC778;&#xB371;&#xC2A4;&#xB97C; &#xBC18;&#xD658; &#xD55C;&#xB2E4;
+   *
+   * @memberof Result
+   * @param {number} index &#xD604;&#xC7AC; index number
+   * @param {number} count &#xAC31;&#xC2E0;&#xB41C; item &#xAC2F;&#xC218;
+   * @return {number} next item index
+   */
+  nextIndex(index, count) {
+    return index &lt; count ? this.index + 1 : 0;
+  }
+
+  /**
+   * &#xD0A4;&#xBCF4;&#xB4DC; UP&#xC2DC; &#xC774;&#xC804; &#xC778;&#xB371;&#xC2A4;&#xB97C; &#xBC18;&#xD658; &#xD55C;&#xB2E4;
+   *
+   * @memberof Result
+   * @param {number} index &#xD604;&#xC7AC; index number
+   * @param {number} count &#xAC31;&#xC2E0;&#xB41C; item &#xAC2F;&#xC218;
+   * @return {number} prev item index
+   */
+  prevIndex(index, count) {
+    this.index = index === -1 ? -1 : index - 1;
+    return this.index === -1 ? count : this.index;
+  }
+
+  /**
+   * &#xD0A4;&#xBCF4;&#xB4DC; UP/DOWN &#xC774;&#xBCA4;&#xD2B8; &#xD578;&#xB4E4;&#xB7EC;
+   * &#xD0A4;&#xBCF4;&#xB4DC; &#xC81C;&#xC5B4;&#xC2DC; &#xC2A4;&#xD06C;&#xB864;&#xC774; &#xC788;&#xC744;&#xC2DC; &#xD65C;&#xC131;&#xD654; index&#xC5D0; &#xB9DE;&#xAC8C; &#xC2A4;&#xD06C;&#xB864; &#xC81C;&#xC5B4;
+   *
+   * @memberof Result
+   * @param {number} index &#xD604;&#xC7AC; index number
+   * @param {String} type {next | prev} &#xB2E4;&#xC74C; &#xC544;&#xC774;&#xD15C; &#xB610;&#xB294; &#xC774;&#xC804; &#xC544;&#xC774;&#xD15C;
+   */
+  keyboardMove(index, type) {
+    const items = document.querySelectorAll(&apos;[aria-selected]&apos;);
+    const ul = this.root.querySelector(&apos;ul&apos;);
+    const ulHeight = ul.offsetHeight;
+    const liHeight = items[0].offsetHeight;
+    const itemCount = items.length - 1;
+
+    if (this.isSelected()) {
+      items[index].setAttribute(&apos;aria-selected&apos;, &apos;false&apos;);
+      this.handleClass(items[index], &apos;remove&apos;);
+    }
+
+    this.index = this[`${type}Index`](index, itemCount);
+    items[this.index].setAttribute(&apos;aria-selected&apos;, &apos;true&apos;);
+    items[this.index].focus();
+    this.handleClass(items[this.index], &apos;add&apos;);
+    ul.scrollTop = items[this.index].offsetTop - ulHeight + liHeight;
+  }
+
+  /**
+   * keycode&#xC5D0; &#xB9DE;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xBC14;&#xC778;&#xB529; &#xD55C;&#xB2E4;.
+   *
+   * @memberof Result
+   * @param {number} key event keyCode
+   * @param {boolean} isShift shift key &#xC785;&#xB825; &#xC5EC;&#xBD80;
+   */
+  keyboardHandler(key, isShift) {
+    const targetFn = this.keyHandler[key];
+    typeof targetFn === &apos;function&apos; &amp;&amp; targetFn(isShift);
+  }
+
+  /**
+   * &#xACB0;&#xACFC; &#xB9AC;&#xC2A4;&#xD2B8; &#xC911;&#xC5D0; &#xC120;&#xD0DD;&#xB41C; &#xC544;&#xC774;&#xD15C;&#xC774; &#xC788;&#xB294;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC5EC;&#xBD80; &#xBC18;&#xD658;
+   *
+   * @memberof Result
+   * @return {boolean} &#xD65C;&#xC131;&#xD654; &#xC5EC;&#xBD80;
+   */
+  isSelected() {
+    return this.index &gt; -1;
+  }
+
+  /**
+   * &#xACB0;&#xACFC; &#xB9AC;&#xC2A4;&#xD2B8; &#xC120;&#xD0DD;&#xC2DC; &#xC544;&#xC774;&#xD15C; index &#xBC18;&#xD658;
+   *
+   * @memberof Result
+   * @param {number} idx &#xC544;&#xC774;&#xD15C; index
+   * @return {number} &#xC120;&#xD0DD;&#xB41C; &#xC544;&#xC774;&#xD15C; index
+   */
+  getData(idx) {
+    const target = this.data[idx];
+
+    return target.value;
+  }
+
+  /**
+   * init&#xC2DC;&#xC810;&#xC5D0; result container&#xC758; top&#xAC12;&#xC744; &#xAD6C;&#xD574;&#xC628;&#xB2E4;.
+   *
+   * @memberof Result
+   * @return {Result} result instance
+   */
+  setResultOffset() {
+    const offsetTop = this.root.offsetHeight;
+    this.css(&apos;top&apos;, offsetTop + &apos;px&apos;);
+    return this;
+  }
+}
+
+module.exports = Result;</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

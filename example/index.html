@@ -1,16 +1,226 @@
 <!doctype html>
 <html>
-
-<head>
-  <title>Otom plugin example</title>
-  <script src="./dist/otom.js"></script>
-</head>
-
-<body>
-  <div data-otom-el="container">
-    <input data-otom-el="input" type="text">
-  </div>
-  <script src="./js/main.js"></script>
-</body>
-
+  <head>
+    <title>Otom plugin example</title>
+    <link rel="stylesheet" href="http://s-dev.wemep.co.kr/review/dist/pc/css/common/common.css">
+    <link rel="stylesheet" href="http://s-dev.wemep.co.kr/review/dist/pc/css/common/layout.css">
+    <link rel="stylesheet" href="http://s-dev.wemep.co.kr/review/dist/pc/css/pages/mix_common.css">
+    <link rel="stylesheet" href="http://s-dev.wemep.co.kr/review/dist/pc/css/pages/member.css">
+    <script src="./dist/otom.js"></script>
+    <style>
+      .auto_complete ul{overflow-y:auto; max-height:148px;}
+      .auto_complete li.on{background-color: #ccc;}
+    </style>
+  </head>
+  <body>
+    <div class="login_wrap">
+      <h4 class="tit t_login_b">로그인</h4>
+      <div class="login_inner">
+        <div class="login_area">
+          <div class="wrap_tab">
+            <ul class="tab_info siz2">
+              <li>
+                <a href="#tab_1" class="tab1">
+                  <span>회원</span>
+                </a>
+              </li>
+              <li class="on">
+                <a href="#tab_2" class="tab2">
+                  <span>비회원 딜</span>
+                </a>
+              </li>
+              <li>
+                <a href="#tab_3" class="tab3">
+                  <span>비회원 상품</span><span class="ico badge_beta">beta</span>
+                </a>
+              </li>
+            </ul>
+            <div id="tab_1" class="tab_cont">
+              <h5 class="blind">회원 로그인</h5>
+              <div class="member_login">
+                <ul>
+                  <li>
+                    <div class="input_area" data-otom-el="container">
+                      <i class="ico ico_inp_id"></i>
+                      <label style="display:none" for="login_id" class="lbl_type">아이디 또는 이메일</label>
+                      <input data-otom-el="input" type="text" id="login_id" class="inpt_default" value="" style="width:290px">
+                      
+                      <div class="auto_complete" style="display:block; border:0; max-height:none;" data-otom-el="result"></div>
+    
+                    </div>
+                    <div class="input_area" data-otom-el="container01">
+                      <i class="ico ico_inp_id"></i>
+                      <label style="display:none" for="login_id01" class="lbl_type">아이디 또는 이메일</label>
+                      <input data-otom-el="input" type="text" id="login_id01" class="inpt_default" value="" style="width:290px">
+                    
+                      <div class="auto_complete" style="display:block; border:0; max-height:none;" data-otom-el="result"></div>
+                    
+                    </div>
+                    <div class="input_area" data-otom-el="container02">
+                      <i class="ico ico_inp_id"></i>
+                      <label style="display:none" for="login_id02" class="lbl_type">아이디 또는 이메일</label>
+                      <input data-otom-el="input" type="text" id="login_id02" class="inpt_default" value="" style="width:290px">
+                    
+                      <div class="auto_complete" style="display:block; border:0; max-height:none;" data-otom-el="result"></div>
+                    
+                    </div>
+                  </li>
+                  <li>
+                    <div class="input_area">
+                      <i class="ico ico_inp_pw"></i>
+                      <label for="login_pw" class="lbl_type">비밀번호</label>
+                      <input type="password" id="login_pw" class="inpt_default" value="" style="width:290px;">
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <p class="inpt_er_text">아이디, 비밀번호를 다시 확인해 주세요.</p>
+              <!-- 보안문자 -->
+              <div class="captcha">
+                <div class="captch_wp">
+                  <!-- UIDEV-245 이미지 사이즈 수정 및 추가 -->
+                  <div class="img_captcha">
+                    <img id="captchaImage" height="60" width="356" class="img_captcha_txt"
+                      src="https://front.wemakeprice.com/api/user/login/getCaptchaImage?captchaId=b6920dc4a5&amp;time=1530770440790">
+                  </div>
+                  <!--// UIDEV-245 이미지 사이즈 수정 및 추가 -->
+                  <img src="//image.wemakeprice.com/images/resources_v2/front/2014/member/captcha_play_voice.gif"
+                    width="270" height="53" class="img_captcha_voice" alt="음성플레이">
+                  <a href="#" id="play_audio" class="btn_sys sml_m btn_cap_1" tabindex="3"><span>음성듣기</span></a>
+                  <a href="#" class="btn_sys sml_m btn_cap_1" tabindex="3" style="display: none;"><span>문자보기</span></a>
+                  <a href="#" class="btn_sys sml_m btn_cap_2" tabindex="4"><span>새로고침</span></a>
+                </div>
+                <div class="member_login">
+                  <ul>
+                    <li>
+                      <div class="input_area">
+                        <i class="ico ico_inp_captcha"></i>
+                        <label for="captcha_word" class="lbl_type">자동입력 방지문자</label>
+                        <input type="text" id="captcha_word" class="inpt_default" value="" style="width:290px">
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="btn_login_area">
+                <a href="#" class="btns_sys red_big_xb"><span>로그인</span></a>
+              </div>
+              <div class="chk_login_area">
+                <ul>
+                  <li>
+                    <input type="checkbox" class="blind" name="group_c" id="chkBtn_login">
+                    <label for="chkBtn_login" class="chk_box on" onclick="boxCheck(this);"><span class="ico"></span>로그인 상태
+                      유지</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" class="blind" name="group_c" id="chkBtn_save">
+                    <label for="chkBtn_save" class="chk_box" onclick="boxCheck(this);"><span class="ico"></span>아이디
+                      저장</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="find_login_area">
+                <a href="#" class="find">아이디찾기</a>
+                <a href="#" class="find">비밀번호 찾기</a>
+                <a href="#" class="btn_sys sml_b"><span>회원가입</span></a>
+              </div>
+            </div>
+            <div id="tab_2" class="tab_cont" style="display:none">
+              <h5 class="blind">비회원 딜</h5>
+              <div class="member_login">
+                <ul>
+                  <li>
+                    <div class="input_area">
+                      <i class="ico ico_inp_order"></i>
+                      <label for="none_order_no" class="lbl_type">구매번호</label>
+                      <input type="text" id="none_order_no" class="inpt_default" value="" style="width:290px">
+                    </div>
+                  </li>
+                  <li>
+                    <div class="input_area">
+                      <i class="ico ico_inp_phone"></i>
+                      <label for="order_phone" class="lbl_type">주문시 사용한 휴대폰 번호</label>
+                      <input type="text" id="order_phone" class="inpt_default" value="" style="width:290px;">
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <p class="inpt_er_text">구매번호, 휴대폰 번호를 다시 확인해 주세요.</p>
+              <div class="btn_login_area">
+                <a href="#" class="btns_sys red_big_xb"><span>조회하기</span></a>
+              </div>
+              <div class="none_login_area">
+                <ul class="list_type">
+                  <li>구매번호는 발송된 이메일에서 확인하실 수 있습니다.</li>
+                  <li>구매번호가 생각나지 않는 경우, 고객센터(1588-4763)로 문의 부탁드립니다.</li>
+                </ul>
+                <a href="#" class="btn_sys sml_b"><span>회원가입</span></a>
+              </div>
+            </div>
+            <div id="tab_3" class="tab_cont" style="display:none">
+              <h5 class="blind">비회원 상품</h5>
+              <div class="member_login">
+                <ul>
+                  <li>
+                    <div class="input_area">
+                      <i class="ico ico_inp_order"></i>
+                      <label for="none_order_no" class="lbl_type">구매번호</label>
+                      <input type="text" id="none_order_no" class="inpt_default" value="" style="width:290px">
+                    </div>
+                  </li>
+                  <li>
+                    <div class="input_area">
+                      <i class="ico ico_inp_phone"></i>
+                      <label for="order_phone" class="lbl_type">주문시 사용한 휴대폰 번호</label>
+                      <input type="text" id="order_phone" class="inpt_default" value="" style="width:290px;">
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <p class="inpt_er_text">구매번호, 휴대폰 번호를 다시 확인해 주세요.</p>
+              <div class="btn_login_area">
+                <a href="#" class="btns_sys red_big_xb"><span>조회하기</span></a>
+              </div>
+              <div class="none_login_area">
+                <ul class="list_type">
+                  <li>구매번호는 발송된 이메일에서 확인하실 수 있습니다.</li>
+                  <li>구매번호가 생각나지 않는 경우, 고객센터(1588-4763)로 문의 부탁드립니다.</li>
+                </ul>
+                <a href="#" class="btn_sys sml_b"><span>회원가입</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 롤링배너 -->
+      <div class="rolling_bic_banner">
+        <div class="wrap_banner">
+          <ul class="list_banner">
+            <!-- 하우스 배너
+    										<li>
+    											<a href=""><img src="//image.wemakeprice.com/images/resources_v2/front/member/house_banner_login.png" alt=""></a>
+    										</li> -->
+            <li>
+              <a href=""><img src="//dummyimage.com/554x158/f7dbcf/fff" alt=""></a>
+            </li>
+          </ul>
+        </div>
+        <!-- 배너가 2개 이상일 때 노출 -->
+        <div class="wrap_pager">
+          <span class="inner">
+            <a href="" class="pager_link">1</a>
+            <a href="" class="pager_link active">2</a>
+            <a href="" class="pager_link">3</a>
+            <a href="" class="pager_link">4</a>
+            <a href="" class="pager_link">5</a>
+            <a href="" class="pager_link">6</a>
+          </span>
+        </div>
+        <!-- 배너가 2개 이상일 때 노출 -->
+        <button type="button" class="btn_prev" data-type="prev">이전</button>
+        <button type="button" class="btn_next" data-type="next">다음</button>
+      </div>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
 </html>

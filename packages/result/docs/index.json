@@ -1,0 +1,1269 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "lib/.external-ecmascript.js",
+    "static": true,
+    "longname": "lib/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "lib/result.js",
+    "content": "/**\n * autocomplete reulst list 모듈\n *\n * @author caias, kern86\n * @since 2019.09.06 - draft\n * @example\n *  const Result = require('@otom/result');\n *  const result = new Result({\n *\n *  });\n */\n\n'use strict';\n\nconst Element = require('@otom/elements');\nconst { KEYS, EVENTS } = require('@otom/event');\n\n/**\n * result container DOM attribute\n */\nconst resultAttrs = {\n  'aria-atomic': 'true',\n  'aria-live': 'assertive',\n  'role': 'listbox',\n};\n\n/**\n * defaultProps\n * @memberof Result\n * @type {Object}\n * @property {function} listTmpl list template\n * @property {string} root root container\n * @property {string} container result container\n * @property {string} activeClass active class\n * @property {function} onResultSelected result selected callback\n */\nconst defaultProps = {\n  listTmpl: null,\n  root: '[data-otom-el=container]',\n  container: '[data-otom-el=result]',\n  activeClass: '',\n  onResultSelected: () => {},\n};\n\n/**\n * Result\n * @memberof result\n *\n */\nclass Result extends Element {\n  constructor(opts = {}) {\n    const props = Object.assign({}, defaultProps, opts);\n    // Element Class 상속\n    super(props.container, props.root);\n    // props\n    this.props = props;\n    /**\n     * list template\n     * @memberof Result\n     * @type {function}\n     */\n    this.listTmpl = this.props.listTmpl;\n    /**\n     * result data index\n     * @memberof Result\n     * @type {number}\n     */\n    this.index = -1;\n\n    /**\n     * keyHandler function 모음\n     * @memberof Result\n     * @type {Object}\n     */\n    this.keyHandler = {\n      // cursor down\n      [KEYS.DOWN]: () => {\n        this.keyboardMove(this.index, 'next');\n      },\n      // cursor up\n      [KEYS.UP]: () => {\n        this.keyboardMove(this.index, 'prev');\n      },\n      // esc\n      [KEYS.ESC]: () => {\n        this.remove();\n      },\n      // enter\n      [KEYS.ENTER]: () => {\n        this.enterHandler();\n      },\n      // tab\n      [KEYS.TAB]: (isShift) => {\n        this.keyboardMove(this.index, isShift ? 'prev' : 'next');\n      },\n    };\n  }\n\n  /**\n   * initiailize\n   * @memberof Result\n   */\n  init() {\n    this.setResultOffset().setAttrList(resultAttrs);\n  }\n\n  /**\n   * data 존재 유무에 따라 item update 또는 remove한다.\n   *\n   * @memberof Result\n   * @param {data} data regexp matched data\n   */\n  update(data) {\n    this.data = data;\n    if (data.length) {\n    // data가 존재하는 경우 add\n      this.add(data);\n      this.index = -1;\n    // 존재하지 않는 경우 remove\n    } else {\n      this.remove();\n    }\n  }\n\n  /**\n   * data가 있을 시에 아이템을 업데이트 한다\n   *\n   * @memberof Result\n   * @param {Array} data regexp matched data\n   */\n  add(data) {\n    // display data list 생성\n    const dispList = data.map((item) => {\n      return item.dispVal;\n    });\n    // handlebars list 생성\n    const list = this.listTmpl({ data: dispList });\n    // list append\n    this\n      .remove()\n      .append(this.base, list, () => {\n        this.clickHandler();\n      });\n  }\n\n  /**\n   * data가 없을시에 container안에 돔을 초기화 한다.\n   *\n   * @memberof Result\n   * @return {Result} result instance\n   */\n  remove() {\n    this.base.innerHTML = '';\n    this.index = -1;\n    return this;\n  }\n\n  /**\n   * Target에 대한 class event를 제어한다.\n   *\n   * @memberof Result\n   * @param {Element} el element\n   * @param {string} type event type\n   */\n  handleClass(el, type) {\n    const className = this.props.activeClass;\n    if (!className) { return; }\n\n    el.classList[type](className);\n  }\n\n  /**\n   * 결과 리스트 Click event\n   *\n   * @memberof Result\n   */\n  clickHandler() {\n    const items = document.querySelectorAll('[aria-selected]');\n\n    items.forEach((anchor, idx) => {\n      anchor.addEventListener(EVENTS.CLICK, (e) => {\n        const target = e.currentTarget;\n        this.reset();\n        target.setAttribute('aria-selected', 'true');\n        this.handleClass(target, 'add');\n        this.props.onResultSelected(this.getData(idx));\n\n      });\n    });\n  }\n\n  /**\n   * 현재 선택된 결과 리스트의 aria-selected를 초기화 한다 .\n   *\n   * @memberof Result\n   * @param {function} callback 초기화 후에 실행 시킬 callback 함수\n   */\n  reset(callback = () => {}) {\n    const items = document.querySelectorAll('[aria-selected]');\n    items.forEach((item) => {\n      item.setAttribute('aria-selected', 'false');\n      this.handleClass(item, 'remove');\n    });\n\n    callback();\n  }\n\n  /**\n   * 결과 리스트 Enter Event\n   *\n   * @memberof Result\n   */\n  enterHandler() {\n    if (!this.isSelected()) { return; }\n    this.props.onResultSelected(this.getData(this.index));\n  }\n\n  /**\n   * 키보드 DOWN시 다음 인덱스를 반환 한다\n   *\n   * @memberof Result\n   * @param {number} index 현재 index number\n   * @param {number} count 갱신된 item 갯수\n   * @return {number} next item index\n   */\n  nextIndex(index, count) {\n    return index < count ? this.index + 1 : 0;\n  }\n\n  /**\n   * 키보드 UP시 이전 인덱스를 반환 한다\n   *\n   * @memberof Result\n   * @param {number} index 현재 index number\n   * @param {number} count 갱신된 item 갯수\n   * @return {number} prev item index\n   */\n  prevIndex(index, count) {\n    this.index = index === -1 ? -1 : index - 1;\n    return this.index === -1 ? count : this.index;\n  }\n\n  /**\n   * 키보드 UP/DOWN 이벤트 핸들러\n   * 키보드 제어시 스크롤이 있을시 활성화 index에 맞게 스크롤 제어\n   *\n   * @memberof Result\n   * @param {number} index 현재 index number\n   * @param {String} type {next | prev} 다음 아이템 또는 이전 아이템\n   */\n  keyboardMove(index, type) {\n    const items = document.querySelectorAll('[aria-selected]');\n    const ul = this.root.querySelector('ul');\n    const ulHeight = ul.offsetHeight;\n    const liHeight = items[0].offsetHeight;\n    const itemCount = items.length - 1;\n\n    if (this.isSelected()) {\n      items[index].setAttribute('aria-selected', 'false');\n      this.handleClass(items[index], 'remove');\n    }\n\n    this.index = this[`${type}Index`](index, itemCount);\n    items[this.index].setAttribute('aria-selected', 'true');\n    items[this.index].focus();\n    this.handleClass(items[this.index], 'add');\n    ul.scrollTop = items[this.index].offsetTop - ulHeight + liHeight;\n  }\n\n  /**\n   * keycode에 맞는 이벤트를 바인딩 한다.\n   *\n   * @memberof Result\n   * @param {number} key event keyCode\n   * @param {boolean} isShift shift key 입력 여부\n   */\n  keyboardHandler(key, isShift) {\n    const targetFn = this.keyHandler[key];\n    typeof targetFn === 'function' && targetFn(isShift);\n  }\n\n  /**\n   * 결과 리스트 중에 선택된 아이템이 있는지에 대한 여부 반환\n   *\n   * @memberof Result\n   * @return {boolean} 활성화 여부\n   */\n  isSelected() {\n    return this.index > -1;\n  }\n\n  /**\n   * 결과 리스트 선택시 아이템 index 반환\n   *\n   * @memberof Result\n   * @param {number} idx 아이템 index\n   * @return {number} 선택된 아이템 index\n   */\n  getData(idx) {\n    const target = this.data[idx];\n\n    return target.value;\n  }\n\n  /**\n   * init시점에 result container의 top값을 구해온다.\n   *\n   * @memberof Result\n   * @return {Result} result instance\n   */\n  setResultOffset() {\n    const offsetTop = this.root.offsetHeight;\n    this.css('top', offsetTop + 'px');\n    return this;\n  }\n}\n\nmodule.exports = Result;",
+    "static": true,
+    "longname": "/Users/kern/workspace/wmp/fe-otom/packages/result/lib/result.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "name": "Element",
+    "memberof": "lib/result.js",
+    "static": true,
+    "longname": "lib/result.js~Element",
+    "access": "public",
+    "export": false,
+    "importPath": "@otom/result",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 50,
+    "kind": "variable",
+    "name": "KEYS",
+    "memberof": "lib/result.js",
+    "static": true,
+    "longname": "lib/result.js~KEYS",
+    "access": "public",
+    "export": false,
+    "importPath": "@otom/result",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "variable",
+    "name": "resultAttrs",
+    "memberof": "lib/result.js",
+    "static": true,
+    "longname": "lib/result.js~resultAttrs",
+    "access": "public",
+    "export": false,
+    "importPath": "@otom/result",
+    "importStyle": null,
+    "description": "result container DOM attribute",
+    "lineNumber": 21,
+    "type": {
+      "types": [
+        "{\"aria-atomic\": string, \"aria-live\": string, \"role\": string}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "variable",
+    "name": "defaultProps",
+    "memberof": "lib/result.js",
+    "static": true,
+    "longname": "lib/result.js~defaultProps",
+    "access": "public",
+    "export": false,
+    "importPath": "@otom/result",
+    "importStyle": null,
+    "description": "defaultProps",
+    "lineNumber": 37,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "listTmpl",
+        "description": "list template"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "root",
+        "description": "root container"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "container",
+        "description": "result container"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "activeClass",
+        "description": "active class"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "onResultSelected",
+        "description": "result selected callback"
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "class",
+    "name": "Result",
+    "memberof": "lib/result.js",
+    "static": true,
+    "longname": "lib/result.js~Result",
+    "access": "public",
+    "export": true,
+    "importPath": "@otom/result",
+    "importStyle": "Result",
+    "description": "Result",
+    "lineNumber": 50,
+    "interface": false,
+    "extends": [
+      "Element"
+    ]
+  },
+  {
+    "__docId__": 54,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 51,
+    "undocument": true
+  },
+  {
+    "__docId__": 55,
+    "kind": "member",
+    "name": "props",
+    "memberof": "lib/result.js~Result",
+    "static": false,
+    "longname": "lib/result.js~Result#props",
+    "access": "public",
+    "description": null,
+    "lineNumber": 56,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "member",
+    "name": "listTmpl",
+    "memberof": "lib/result.js~Result",
+    "static": false,
+    "longname": "lib/result.js~Result#listTmpl",
+    "access": "public",
+    "description": "list template",
+    "lineNumber": 62,
+    "type": {
+      "nullable": null,
+      "types": [
+        "function"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "member",
+    "name": "index",
+    "memberof": "lib/result.js~Result",
+    "static": false,
+    "longname": "lib/result.js~Result#index",
+    "access": "public",
+    "description": "result data index",
+    "lineNumber": 68,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "member",
+    "name": "keyHandler",
+    "memberof": "lib/result.js~Result",
+    "static": false,
+    "longname": "lib/result.js~Result#keyHandler",
+    "access": "public",
+    "description": "keyHandler function 모음",
+    "lineNumber": 75,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "method",
+    "name": "init",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#init",
+    "access": "public",
+    "description": "initiailize",
+    "lineNumber": 103,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 60,
+    "kind": "method",
+    "name": "update",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#update",
+    "access": "public",
+    "description": "data 존재 유무에 따라 item update 또는 remove한다.",
+    "lineNumber": 113,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "data"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "regexp matched data"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 61,
+    "kind": "member",
+    "name": "data",
+    "memberof": "lib/result.js~Result",
+    "static": false,
+    "longname": "lib/result.js~Result#data",
+    "access": "public",
+    "description": null,
+    "lineNumber": 114,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "add",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#add",
+    "access": "public",
+    "description": "data가 있을 시에 아이템을 업데이트 한다",
+    "lineNumber": 131,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "regexp matched data"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 64,
+    "kind": "method",
+    "name": "remove",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#remove",
+    "access": "public",
+    "description": "data가 없을시에 container안에 돔을 초기화 한다.",
+    "lineNumber": 152,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Result"
+      ],
+      "spread": false,
+      "description": "result instance"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 66,
+    "kind": "method",
+    "name": "handleClass",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#handleClass",
+    "access": "public",
+    "description": "Target에 대한 class event를 제어한다.",
+    "lineNumber": 165,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Element"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "el",
+        "description": "element"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "event type"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "name": "clickHandler",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#clickHandler",
+    "access": "public",
+    "description": "결과 리스트 Click event",
+    "lineNumber": 177,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 68,
+    "kind": "method",
+    "name": "reset",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#reset",
+    "access": "public",
+    "description": "현재 선택된 결과 리스트의 aria-selected를 초기화 한다 .",
+    "lineNumber": 198,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "callback",
+        "description": "초기화 후에 실행 시킬 callback 함수"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 69,
+    "kind": "method",
+    "name": "enterHandler",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#enterHandler",
+    "access": "public",
+    "description": "결과 리스트 Enter Event",
+    "lineNumber": 213,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 70,
+    "kind": "method",
+    "name": "nextIndex",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#nextIndex",
+    "access": "public",
+    "description": "키보드 DOWN시 다음 인덱스를 반환 한다",
+    "lineNumber": 226,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "index",
+        "description": "현재 index number"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "count",
+        "description": "갱신된 item 갯수"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "next item index"
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "method",
+    "name": "prevIndex",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#prevIndex",
+    "access": "public",
+    "description": "키보드 UP시 이전 인덱스를 반환 한다",
+    "lineNumber": 238,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "index",
+        "description": "현재 index number"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "count",
+        "description": "갱신된 item 갯수"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "prev item index"
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "method",
+    "name": "keyboardMove",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#keyboardMove",
+    "access": "public",
+    "description": "키보드 UP/DOWN 이벤트 핸들러\n키보드 제어시 스크롤이 있을시 활성화 index에 맞게 스크롤 제어",
+    "lineNumber": 251,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "index",
+        "description": "현재 index number"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "{next | prev} 다음 아이템 또는 이전 아이템"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 75,
+    "kind": "method",
+    "name": "keyboardHandler",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#keyboardHandler",
+    "access": "public",
+    "description": "keycode에 맞는 이벤트를 바인딩 한다.",
+    "lineNumber": 277,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "key",
+        "description": "event keyCode"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "isShift",
+        "description": "shift key 입력 여부"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 76,
+    "kind": "method",
+    "name": "isSelected",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#isSelected",
+    "access": "public",
+    "description": "결과 리스트 중에 선택된 아이템이 있는지에 대한 여부 반환",
+    "lineNumber": 288,
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "활성화 여부"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 77,
+    "kind": "method",
+    "name": "getData",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#getData",
+    "access": "public",
+    "description": "결과 리스트 선택시 아이템 index 반환",
+    "lineNumber": 299,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "idx",
+        "description": "아이템 index"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "선택된 아이템 index"
+    }
+  },
+  {
+    "__docId__": 78,
+    "kind": "method",
+    "name": "setResultOffset",
+    "memberof": "lib/result.js~Result",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/result.js~Result#setResultOffset",
+    "access": "public",
+    "description": "init시점에 result container의 top값을 구해온다.",
+    "lineNumber": 311,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Result"
+      ],
+      "spread": false,
+      "description": "result instance"
+    },
+    "params": []
+  },
+  {
+    "kind": "index",
+    "content": "# `@otom/result`\n\n> TODO: description\n\n## Usage\n\n```\nconst result = require('@otom/result');\n\n// TODO: DEMONSTRATE API\n```\n",
+    "longname": "/Users/kern/workspace/wmp/fe-otom/packages/result/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"@otom/result\",\n  \"version\": \"0.0.1\",\n  \"description\": \"> TODO: description\",\n  \"author\": \"유한승 <kern86@wemakeprice.com>\",\n  \"homepage\": \"\",\n  \"license\": \"ISC\",\n  \"main\": \"lib/result.js\",\n  \"directories\": {\n    \"lib\": \"lib\",\n    \"test\": \"__tests__\"\n  },\n  \"files\": [\n    \"lib\"\n  ],\n  \"publishConfig\": {\n    \"registry\": \"http://registry.npmjs.org/\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"ssh://git@stash.wemakeprice.com:7999/tmfe/fe-otom.git\"\n  },\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: run tests from root\\\" && exit 1\",\n    \"clean:docs\": \"rimraf ./docs\",\n    \"docs\": \"npm run clean:docs && esdoc\"\n  },\n  \"dependencies\": {\n    \"@otom/elements\": \"file:../elements\",\n    \"@otom/event\": \"file:../event\"\n  }\n}\n",
+    "longname": "/Users/kern/workspace/wmp/fe-otom/packages/result/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

@@ -1,10 +1,13 @@
-### Node ###
 # Logs
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # Runtime data
 pids
@@ -17,12 +20,32 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
+*.lcov
 
-# Compiled binary addons (http://nodejs.org/api/addons.html)
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
 # Dependency directories
 node_modules/
+jspm_packages/
+
+# TypeScript v1 declaration files
+typings/
+
+# TypeScript cache
+*.tsbuildinfo
 
 # Optional npm cache directory
 .npm
@@ -39,16 +62,27 @@ node_modules/
 # Yarn Integrity file
 .yarn-integrity
 
-# Build directory
-dist/
-build/
+# dotenv environment variables file
+.env
+.env.test
 
-# MAC OS Garbage file
-*DS_Store*
-.DS_Store
+# parcel-bundler cache (https://parceljs.org/)
+.cache
 
-# scss
-._*
-**/.sass-cache/**
-**/.__*.scss
-*.css.map
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/

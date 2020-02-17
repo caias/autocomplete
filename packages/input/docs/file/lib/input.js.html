@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">lib/input.js | @otom/input</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="input module using otom"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@otom/input"><meta property="twitter:description" content="input module using otom"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/input.js~Input.html">Input</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Element">Element</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">lib/input.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @otom/Input plugin
+ *
+ * @name Input
+ * @author caias
+ * @since 2019.09.06 - draft
+ * @example
+ *  const Input = require(&apos;@otom/input&apos;);
+ *  const inputObj = new Input({
+ *    // root container
+ *    root: &apos;[data-otom-el=container]&apos;,
+ *    // input base element
+ *    base: &apos;[data-otom-el=input]&apos;,
+ *    //  onchange callback
+ *    onChange: () =&gt; {},
+ *    // on blur callback
+ *    onBlur: () =&gt; {},
+ *    // exclude key callback
+ *    onExclude: () =&gt; {},
+ *  });
+ */
+&apos;use strict&apos;;
+
+const Element = require(&apos;@otom/elements&apos;);
+const { KEYS, EVENTS, isExclude } = require(&apos;@otom/event&apos;);
+
+/**
+ * input attribute &#xBAA8;&#xC74C;
+ */
+const inputAttrs = {
+  &apos;autocomplete&apos;: &apos;off&apos;,
+  &apos;aria-expanded&apos;: &apos;false&apos;,
+  &apos;aria-autocomplete&apos;: &apos;list&apos;,
+  &apos;aria-haspopup&apos;: &apos;listbox&apos;,
+  &apos;role&apos;: &apos;combobox&apos;,
+};
+
+/**
+ * Input properties
+ * @memberof Input
+ * @property {string} root container root
+ * @property {string} base base container
+ * @property {function} onChange on change callback
+ * @property {function} onBlur on blur callback
+ * @property {function} onExclude exclude key callback (enter, tab, up, down, esc)
+ */
+const defaultProps = {
+  root: &apos;[data-otom-el=container]&apos;,
+  base: &apos;[data-otom-el=input]&apos;,
+  onChange: () =&gt; {},
+  onBlur: () =&gt; {},
+  onExclude: () =&gt; {},
+};
+
+/**
+ * &#xBCC0;&#xD658;&#xD560; type&#xBCC4; function &#xBAA8;&#xC74C;
+ */
+const replaceFns = {
+  // &#xC774;&#xBA54;&#xC77C;
+  email: (target, text) =&gt; {
+    const arr = target.split(&apos;@&apos;);
+    return `${arr[0]}@${text}`;
+  },
+};
+
+class Input extends Element {
+  constructor(opts = {}) {
+    const props = Object.assign({}, defaultProps, opts);
+    super(props.base, props.root);
+    this.props = props;
+    /**
+     * input &#xC774;&#xC804;&#xAC12;&#xC744; &#xD655;&#xC778;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xBCC0;&#xC218;
+     * @memberof Input
+     * @type {string}
+     */
+    this.preVal = null;
+    /**
+     * input&#xC774; focus &#xB418;&#xC5B4;&#xC788;&#xB294;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC5EC;&#xBD80;
+     * @memberof Input
+     * @type {boolean}
+     */
+    this.isFocus = false;
+  }
+
+  /**
+   * initialize
+   *
+   * @memberof Input
+   */
+  init() {
+    this.attr(inputAttrs);
+    this.initHandler();
+  }
+
+  /**
+   * input event Handler
+   *
+   * @memberof Input
+   */
+  initHandler() {
+    // focus
+    this.base.addEventListener(EVENTS.FOCUS, () =&gt; {
+      this.isFocus = true;
+      this.props.onFocus();
+    });
+
+    // blur
+    this.base.addEventListener(EVENTS.BLUR, () =&gt; {
+      this.isFocus = false;
+      this.props.onBlur();
+    });
+
+    // click event
+    this.base.addEventListener(EVENTS.KEY_UP, (e) =&gt; {
+      const keyCode = e.keyCode;
+      const value = e.currentTarget.value;
+      const isExcludeKey = isExclude(keyCode);
+
+      // &#xC81C;&#xC678;&#xD560; key &#xBC0F; &#xD574;&#xB2F9; result&#xAC00; open&#xC0C1;&#xD0DC;&#xC778; &#xACBD;&#xC6B0; callback &#xC2E4;&#xD589;
+      if (isExcludeKey &amp;&amp; this.isOpen()) {
+        this.props.onExclude(keyCode);
+        keyCode === KEYS.ESC &amp;&amp; this.off();
+        return;
+      }
+
+      // &#xC774;&#xC804; &#xBCC0;&#xC218;&#xC640; &#xBE44;&#xAD50;&#xD558;&#xC5EC; &#xAC19;&#xC740; &#xACBD;&#xC6B0; &#xC774;&#xBCA4;&#xD2B8; &#xCDE8;&#xC18C;
+      if (this.preVal === value) { return; }
+
+      // &#xC774;&#xC804; value&#xC640; &#xB2E4;&#xB978; &#xACBD;&#xC6B0; &#xC7AC;&#xD560;&#xB2F9;
+      this.preVal = value;
+
+      // callback&#xB0B4; data&#xB97C; &#xBC1B;&#xC544;&#xC11C; &#xCC98;&#xB9AC; (&#xC5C6;&#xB294; &#xACBD;&#xC6B0; &#xBE48; array)
+      const data = this.props.onChange(value) || [];
+      if (data.length) {
+        this.on();
+      } else {
+        this.off();
+      }
+    });
+  }
+
+  /**
+   * list&#xAC00; open&#xB420;&#xC2DC;&#xC5D0; aria &#xAC12;&#xC744; true&#xB85C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.
+   *
+   * @memberof Input
+   */
+  on() {
+    this.attr(&apos;aria-expanded&apos;, &apos;true&apos;);
+  }
+
+  /**
+   * list&#xAC00; close&#xB420;&#xC2DC;&#xC5D0; aria &#xAC12;&#xC744; false&#xB85C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.
+   *
+   * @memberof Input
+   */
+  off() {
+    this.attr(&apos;aria-expanded&apos;, &apos;false&apos;);
+  }
+
+  /**
+   * &#xD604;&#xC7AC; list&#xAC00; &#xC5F4;&#xB824;&#xC788;&#xB294;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC5EC;&#xBD80;&#xB97C; &#xBC18;&#xD658;&#xD55C;&#xB2E4;.
+   *
+   * @memberof Input
+   * @return {boolean} list &#xC5F4;&#xB824;&#xC788;&#xB294;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC5EC;&#xBD80;
+   */
+  isOpen() {
+    return JSON.parse(this.base.getAttribute(&apos;aria-expanded&apos;));
+  }
+
+  /**
+   * list&#xC0C1;&#xC5D0; &#xC120;&#xD0DD;&#xB41C; &#xAC12;&#xC744; input value&#xAC12;&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xD55C;&#xB2E4;.
+   *
+   * @param {string} text &#xC120;&#xD0DD;&#xB41C; &#xD56D;&#xBAA9;&#xC758; &#xD14D;&#xC2A4;&#xD2B8;
+   * @param {string} type autocomplete type
+   * @return {Input} input instance
+   */
+  replace(text, type) {
+    // replace &#xBCC0;&#xC218; &#xCD94;&#xCD9C;
+    const replaceFn = replaceFns[type];
+    // replace &#xD568;&#xC218; &#xC5C6;&#xB294; &#xACBD;&#xC6B0; &#xAE30;&#xC874; text &#xD560;&#xB2F9;
+    this.base.value = typeof replaceFn === &apos;function&apos; ? replaceFn(this.base.value, text) : text;
+    return this;
+  }
+}
+
+module.exports = Input;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

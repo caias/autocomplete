@@ -1,0 +1,972 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/dummy.js",
+    "content": "exports.emailList = ['naver.com', 'hanmail.net', 'nate.com', 'gmail.com', 'lycos.co.kr', 'yahoo.co.kr', 'empal.com', 'dreamwiz.com', 'paran.com', 'korea.com', 'chol.com', 'hanmir.com', 'hanafos.com', 'freechal.com', 'hotmail.com', 'netian.com'];",
+    "static": true,
+    "longname": "/Users/kern/workspace/wmp/fe-otom/src/dummy.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "/**\n * autocomplete main module\n *\n * @name Otom\n * @author caias\n * @contributors kern86\n * @since 2019.08.05 - draft\n * @example\n * // index.html\n * <div data-otom-el=\"container\">\n *  <input type=\"email\" data-otom-el=\"input\" />\n *  <div data-otom-el=\"result\"></div>\n * </div>\n *\n * //js\n * const Otom = require('Otom');\n * const input = new Otom({\n *  el: '[data-otom-el=input]',\n *  container: '[data-otom-el=container]',\n *  result: '[data-otom-el=result]',\n *  type: 'email',\n * });\n */\n'use strict';\n\nconst Input = require('@otom/input');\nconst Result = require('@otom/result');\nconst { EVENTS, isExclude } = require('@otom/event');\nconst { getMatchted } = require('@otom/validation');\nconst listTmpl = require('./templates/partials/list.hbs');\nconst { emailList } = require('./dummy');\n\n/**\n * otom options\n * @memberof Otom\n * @type {Object}\n * @property {string} el target input element string\n * @property {string} container target container element string\n * @property {string} result result container element string\n * @property {string} type autocomplete type\n * @property {Object} xhrOption xhrRequest options\n */\nconst defaultOptions = {\n  el: '[data-otom-el=input]',\n  container: '[data-otom-el=container]',\n  result: '[data-otom-el=result]',\n  type: 'email',\n  // xhr option\n  xhrOption: {\n    url: '',\n    data: '',\n  },\n};\n\nclass Otom {\n  constructor(opts = {}) {\n    this.props = Object.assign({}, defaultOptions, opts);\n    const el = this.props.el;\n\n    if (!el) { throw new Error('[Otom] Error: options.el is not defined.'); }\n  }\n\n  /**\n   * initialize\n   * @memberof Otom\n   */\n  init() {\n    this.inputInit();\n    this.resultInit();\n    // initial event binding\n    this.initHandler();\n  }\n\n  /**\n   * input initialize\n   * @memberof Otom\n   */\n  inputInit() {\n    // input initialize\n    this.input = new Input({\n      root: this.props.container,\n      base: this.props.el,\n      // onchange function\n      onChange: (val) => {\n        // value replace\n        const replace = new RegExp(`${val}`, 'gi');\n        // word matching\n        const matchingWord = val.match(replace);\n        const matchedData = getMatchted(val, this.props.type, emailList);\n\n        // data convert\n        const convertData = matchedData.map((item) => {\n          const cuttingWord = item.substring(val.length - (val.indexOf('@') + 1));\n\n          return {\n            dispVal: `<strong>${matchingWord}</strong>${cuttingWord}`,\n            value: item,\n          };\n        });\n\n        this.result.update(convertData);\n        // send input data\n        return convertData;\n      },\n      // onfocus function\n      onFocus: () => {\n        this.result.reset(() => {\n          this.result.index = -1;\n        });\n      },\n      // onblur function\n      onBlur: () => {\n        if (this.input.isOpen()) {\n          return;\n        }\n        this.result.remove();\n      },\n      // onexclude function\n      onExclude: (code) => {\n        this.result.keyboardHandler(code);\n      },\n    });\n\n    // input 객체 초기화\n    this.input.init();\n  }\n\n  /**\n   * result initialize\n   * @memberof Otom\n   */\n  resultInit() {\n    this.result = new Result({\n      root: this.props.container,\n      container: this.props.result,\n      listTmpl,\n      activeClass: 'on',\n      onResultSelected: (val) => {\n        this.input.replace(val, this.props.type).off();\n        this.result.remove();\n      },\n    });\n\n    // result 객체 초기화\n    this.result.init();\n  }\n\n  /**\n   * initial event handler\n   * @memberof Otom\n   */\n  initHandler() {\n    // container 추출\n    const container = document.querySelector(this.props.container);\n\n    // container keydown 이벤트\n    // container 전체에 keydown 이벤트를 캐치하여, tab키등의 이벤트에 대응\n    container.addEventListener(EVENTS.KEY_DOWN, (e) => {\n      // keycode\n      const keyCode = e.keyCode;\n      // keycode가 제외할 범주에 속해있는지 확인\n      const isExcludeKey = isExclude(keyCode);\n\n      if (isExcludeKey) {\n        if (this.input.isOpen()) {\n          // input내 result가 open 상태인 경우에만 preventDefault 사용\n          e.preventDefault();\n\n          const args = [keyCode];\n          // input이 focus가 아닌 경우에만 argument에 shiftKey 삽입\n          !this.input.isFocus && args.push(e.shiftKey);\n\n          this.result.keyboardHandler.apply(this.result, args);\n        }\n      }\n    });\n  }\n\n  /**\n   * xhr request\n   *\n   * @memberof Otom\n   * @param {Object} opts xhr options\n   */\n  ajax(opts = {}) {\n    if (!opts.url) { throw new Error('[Otom/ajax] Error: url is not defined.'); }\n\n    const xhr = new XMLHttpRequest();\n\n    xhr.onreadystatechange = () => {\n      if (xhr.readyStatus === 4) {\n        if (xhr.status >= 200 && xhr.status < 400) {\n          typeof opts.success === 'function' && opts(xhr.responseText);\n        } else {\n          typeof opts.error === 'function' && opts(xhr.responseText);\n        }\n      }\n    };\n\n    xhr.open(opts.method || 'GET', opts.url, true);\n    xhr.send();\n  }\n\n}\n\nmodule.exports = Otom;",
+    "static": true,
+    "longname": "/Users/kern/workspace/wmp/fe-otom/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 50,
+    "kind": "variable",
+    "name": "Input",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~Input",
+    "access": "public",
+    "export": false,
+    "importPath": "fe-otom/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 26,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "variable",
+    "name": "Result",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~Result",
+    "access": "public",
+    "export": false,
+    "importPath": "fe-otom/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 27,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "variable",
+    "name": "EVENTS",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~EVENTS",
+    "access": "public",
+    "export": false,
+    "importPath": "fe-otom/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "variable",
+    "name": "getMatchted",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~getMatchted",
+    "access": "public",
+    "export": false,
+    "importPath": "fe-otom/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 29,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 54,
+    "kind": "variable",
+    "name": "listTmpl",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~listTmpl",
+    "access": "public",
+    "export": false,
+    "importPath": "fe-otom/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 30,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 55,
+    "kind": "variable",
+    "name": "emailList",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~emailList",
+    "access": "public",
+    "export": false,
+    "importPath": "fe-otom/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 31,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 56,
+    "kind": "variable",
+    "name": "defaultOptions",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~defaultOptions",
+    "access": "public",
+    "export": false,
+    "importPath": "fe-otom/src/index.js",
+    "importStyle": null,
+    "description": "otom options",
+    "lineNumber": 43,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "el",
+        "description": "target input element string"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "container",
+        "description": "target container element string"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "result",
+        "description": "result container element string"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "autocomplete type"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "xhrOption",
+        "description": "xhrRequest options"
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 57,
+    "kind": "class",
+    "name": "Otom",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~Otom",
+    "access": "public",
+    "export": true,
+    "importPath": "fe-otom/src/index.js",
+    "importStyle": "Otom",
+    "description": null,
+    "lineNumber": 55,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 58,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/index.js~Otom",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~Otom#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 56,
+    "undocument": true
+  },
+  {
+    "__docId__": 59,
+    "kind": "member",
+    "name": "props",
+    "memberof": "src/index.js~Otom",
+    "static": false,
+    "longname": "src/index.js~Otom#props",
+    "access": "public",
+    "description": null,
+    "lineNumber": 57,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "method",
+    "name": "init",
+    "memberof": "src/index.js~Otom",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~Otom#init",
+    "access": "public",
+    "description": "initialize",
+    "lineNumber": 67,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "name": "inputInit",
+    "memberof": "src/index.js~Otom",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~Otom#inputInit",
+    "access": "public",
+    "description": "input initialize",
+    "lineNumber": 78,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 62,
+    "kind": "member",
+    "name": "input",
+    "memberof": "src/index.js~Otom",
+    "static": false,
+    "longname": "src/index.js~Otom#input",
+    "access": "public",
+    "description": null,
+    "lineNumber": 80,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "resultInit",
+    "memberof": "src/index.js~Otom",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~Otom#resultInit",
+    "access": "public",
+    "description": "result initialize",
+    "lineNumber": 132,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 64,
+    "kind": "member",
+    "name": "result",
+    "memberof": "src/index.js~Otom",
+    "static": false,
+    "longname": "src/index.js~Otom#result",
+    "access": "public",
+    "description": null,
+    "lineNumber": 133,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "method",
+    "name": "initHandler",
+    "memberof": "src/index.js~Otom",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~Otom#initHandler",
+    "access": "public",
+    "description": "initial event handler",
+    "lineNumber": 152,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 66,
+    "kind": "method",
+    "name": "ajax",
+    "memberof": "src/index.js~Otom",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~Otom#ajax",
+    "access": "public",
+    "description": "xhr request",
+    "lineNumber": 185,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "opts",
+        "description": "xhr options"
+      }
+    ],
+    "return": null
+  },
+  {
+    "kind": "index",
+    "content": "# Otom\n\ninput auto-complete library using vanilla javascript (es6)\n\n## Usage\n\n### install\n\n```bash\n# npm\nnpm i Otom\n\n# yarn\nyarn add Otom\n```\n\n### Usage\n\n*1) Use umd*\n\n```html\n<script src=\"/path/to/dist/otom.js\"></script>\n```\n\n```javascript\nvar otom = new Otom();\notom.init();\n```\n\n*2) Use commonjs*\n\n```javascript\nconst Otom = require('otom');\nconst otom = new Otom();\notom.init();\n```\n\n*3) Use es6*\n\n```javascript\nimport Otom from 'otom';\nconst otom = new Otom();\notom.init();\n```",
+    "longname": "/Users/kern/workspace/wmp/fe-otom/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"fe-otom\",\n  \"version\": \"0.0.1\",\n  \"description\": \"autocomplete module using javascript\",\n  \"main\": \"dist/otom.js\",\n  \"scripts\": {\n    \"test\": \"mocha ./test/otom.spec.js\",\n    \"dev\": \"webpack --config ./tools/development.js\",\n    \"example\": \"nodemon ./example/server.js\",\n    \"bootstrap\": \"lerna bootstrap\",\n    \"docs\": \"esdoc\",\n    \"log:patch\": \"changelog -p\",\n    \"log:minor\": \"changelog -m\",\n    \"log:major\": \"changelog -M\",\n    \"log:file\": \"changelog -f\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"ssh://git@stash.wemakeprice.com:7999/tmfe/fe-otom.git\"\n  },\n  \"keywords\": [\n    \"javascript\",\n    \"es2015\",\n    \"es6\",\n    \"autocomplete\",\n    \"input\",\n    \"jquery\"\n  ],\n  \"author\": \"caias\",\n  \"license\": \"MIT\",\n  \"devDependencies\": {\n    \"chai\": \"^4.2.0\",\n    \"esdoc-node\": \"^1.0.5\",\n    \"generate-changelog\": \"^1.8.0\",\n    \"html-webpack-plugin\": \"^3.2.0\",\n    \"lerna\": \"^3.10.5\",\n    \"lodash\": \"^4.17.15\",\n    \"mocha\": \"^6.2.0\",\n    \"nodemon\": \"^1.19.1\",\n    \"puppeteer\": \"^1.19.0\"\n  },\n  \"dependencies\": {\n    \"@babel/core\": \"^7.5.5\",\n    \"@babel/preset-env\": \"^7.5.5\",\n    \"@otom/elements\": \"file:packages/elements\",\n    \"@otom/event\": \"file:packages/event\",\n    \"@otom/input\": \"file:packages/input\",\n    \"@otom/result\": \"file:packages/result\",\n    \"@otom/validation\": \"file:packages/validation\",\n    \"babel-loader\": \"^8.0.6\",\n    \"css-loader\": \"^3.2.0\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^6.5.1\",\n    \"express\": \"^4.17.1\",\n    \"handlebars\": \"^4.2.0\",\n    \"handlebars-loader\": \"^1.7.1\",\n    \"mini-css-extract-plugin\": \"^0.8.0\",\n    \"path\": \"^0.12.7\",\n    \"rimraf\": \"^3.0.0\",\n    \"style-loader\": \"^1.0.0\",\n    \"webpack\": \"^4.39.2\",\n    \"webpack-cli\": \"^3.3.7\",\n    \"webpack-merge\": \"^4.2.1\"\n  }\n}\n",
+    "longname": "/Users/kern/workspace/wmp/fe-otom/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

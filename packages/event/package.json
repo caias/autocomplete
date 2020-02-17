@@ -1,0 +1,39 @@
+{
+  "name": "@otom/event",
+  "version": "0.0.1",
+  "description": "event util using otom",
+  "keywords": [
+    "jquery",
+    "javascript",
+    "event"
+  ],
+  "author": "유한승 <kern86@wemakeprice.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/event.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.wemakeprice.com:7999/tmfe/fe-otom.git"
+  },
+  "scripts": {
+    "test": "mocha ./__tests__/**.test.js --watch",
+    "start": "babel ./lib/event.js --out-file dist/event.js ",
+    "clean:docs": "rimraf ./docs",
+    "docs": "npm run clean:docs && esdoc"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "element": "^0.1.4",
+    "mocha": "^6.2.0"
+  }
+}

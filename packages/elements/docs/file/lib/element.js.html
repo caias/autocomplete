@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">lib/element.js | @otom/elements</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="element class using otom"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@otom/elements"><meta property="twitter:description" content="element class using otom"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/element.js~Element.html">Element</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">lib/element.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * autocomplete elements &#xBAA8;&#xB4C8;
+ *
+ * @author caias, kern86
+ * @since 2019.09.06 - draft
+ * @example
+ *  const Element = require(&apos;@otom/elements&apos;);
+ *  // single module
+ *  const element = new Element(&apos;input&apos;, &apos;div&apos;);
+ *  element.css(&apos;top&apos;, &apos;30px&apos;);
+ *
+ *  // use extends
+ *  class El extends Element {
+ *    constructor() {
+ *      super(el, root);
+ *    }
+ *
+ *    init() {
+ *      this.css(&apos;top&apos;, &apos;30px&apos;);
+ *    }
+ *  }
+ */
+
+&apos;use strict&apos;;
+
+class Element {
+  constructor(el, root) {
+
+    this.root = document.querySelector(root);
+    this.base = this.find(this.root, el)[0];
+  }
+
+  /**
+   * element&#xB97C; update&#xD55C;&#xB2E4;.
+   * @param {string|Element} [el] base&#xB85C; &#xBC14;&#xC778;&#xB529;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; element
+   */
+  updateEl(el) {
+    // element&#xAC00; string&#xC778; &#xACBD;&#xC6B0;, root&#xC5D0;&#xC11C; find&#xB97C; &#xD1B5;&#xD574; base&#xB97C; &#xBC14;&#xC778;&#xB529;
+    if (typeof el === &apos;string&apos;) {
+      this.base = this.find(this.root, el)[0];
+      return;
+    }
+
+    // DOM element&#xC778; &#xACBD;&#xC6B0; base&#xC5D0; &#xBC14;&#xB85C; &#xD560;&#xB2F9;
+    this.base = el;
+  }
+
+  /**
+   * attribute&#xB97C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.
+   * @param  {Array} args argument list
+   * @example
+   *  this.attr(&apos;aria-extended&apos;, &apos;false&apos;);
+   */
+  attr(...args) {
+    this.updateProps.apply(this, [...args, &apos;attr&apos;]);
+  }
+
+  /**
+   * attribute&#xB97C; &#xC0AD;&#xC81C;&#xD55C;&#xB2E4;.
+   * @param {Array} args argument list
+   * @example
+   *  this.removeAttr(&apos;aria-extended&apos;);
+   */
+  removeAttr(...args) {
+    this.updateProps.apply(this, [...args, &apos;removeAttr&apos;]);
+  }
+
+  /**
+   * css&#xB97C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.
+   * @param  {Array} args argument list
+   * @example
+   *  this.css(&apos;top&apos;, &apos;30px&apos;);
+   */
+  css(...args) {
+    this.updateProps.apply(this, [...args, &apos;css&apos;]);
+  }
+
+  /**
+   * argumentlist&#xC5D0; &#xB530;&#xB77C;&#xC11C; property&#xB97C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.
+   * @param  {Array} args property&#xB97C; &#xBCC0;&#xACBD;&#xD560; argument list
+   * @return {Element} element instance
+   */
+  updateProps(...args) {
+    let type;
+    // argument length&#xC5D0; &#xB530;&#xB978; &#xBD84;&#xAE30;
+    switch (args.length) {
+      // 2&#xAC1C; - ([{key: value}]), type
+      case 2:
+        const list = args[0];
+        type = args[1];
+        this.getFn(type, true).call(this, list);
+        break;
+      // 3&#xAC1C; - key, value, type
+      case 3:
+        const key = args[0];
+        const value = args[1];
+        type = args[2];
+        this.getFn(type, false).call(this, key, value);
+        break;
+      default:
+    }
+
+    return this;
+  }
+
+  /**
+   * property&#xB97C; update&#xD560; function&#xC744; &#xBC18;&#xD658;&#xD55C;&#xB2E4;.
+   *
+   * @param {string} type property update type
+   * @param {boolean} isList list (type array) &#xC5EC;&#xBD80;
+   * @return {Function} update&#xD560; function
+   */
+  getFn(type, isList = false) {
+    switch (type) {
+      case &apos;css&apos;:
+        const cssFn = isList ? this.setStyleList : this.setStyle;
+        return cssFn;
+        break;
+      case &apos;attr&apos;:
+        const attrFn = isList ? this.setAttrList : this.setAttr;
+        return attrFn;
+        break;
+      case &apos;removeAttr&apos;:
+        const removeFn = isList ? this.removeAttrList : this.removeAttr;
+        return removeFn;
+        break;
+      default:
+        return () =&gt; {};
+        break;
+    }
+  }
+
+  /**
+   * object&#xC758; key, value&#xAC12;&#xC744; attribute&#xB85C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD55C;&#xB2E4;.
+   * @param {Object} list update&#xD560; list object
+   */
+  setAttrList(list = {}) {
+    Object.keys(list).forEach(key =&gt; this.setAttr(key, list[key]));
+  }
+
+  /**
+   * &#xB2E8;&#xC77C; key, value&#xC758; attribute&#xB97C; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xD55C;&#xB2E4;.
+   * @param {string} key &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD560; attribute key
+   * @param {*} value &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD560; value
+   */
+  setAttr(key, value) {
+    this.base.setAttribute(key, value);
+  }
+
+  /**
+   * object&#xC758; key, value&#xAC12;&#xC744; style&#xB85C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD55C;&#xB2E4;.
+   * @param {Object} list update&#xD560; list object
+   */
+  setStyleList(list = {}) {
+    Object.keys(list).forEach(key =&gt; this.setStyle(key, list[key]));
+  }
+
+  /**
+   * &#xB2E8;&#xC77C; key, value&#xC758; style&#xB97C; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xD55C;&#xB2E4;.
+   * @param {string} key &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD560; attribute key
+   * @param {*} value &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD560; value
+   */
+  setStyle(key, value) {
+    this.base.style[key] = value;
+  }
+
+  /**
+   * object&#xC758; key, value&#xAC12;&#xC744; attribute &#xBAA8;&#xC74C;&#xC744; &#xC81C;&#xAC70;&#xD55C;&#xB2E4;.
+   * @param {Object} list update&#xD560; list object
+   */
+  removeAttrList(list = []) {
+    list.forEach(key =&gt; this.removeAttr(key));
+  }
+
+  /**
+   * object&#xC758; key, value&#xAC12;&#xC744; attribute&#xB97C; &#xC81C;&#xAC70;&#xD55C;&#xB2E4;.
+   * @param {Object} key &#xC81C;&#xAC70;&#xD560; key
+   */
+  removeAttr(key) {
+    this.base.removeAttribute(key);
+  }
+
+  /**
+   * target&#xC5D0; &#xB300;&#xD55C; selector&#xB97C; &#xCC3E;&#xB294;&#xB2E4;.
+   * @param {Element} target &#xBD80;&#xBAA8; element
+   * @param {string} selector target &#xC5D0;&#xC11C; &#xCC3E;&#xACE0;&#xC790; &#xD558;&#xB294; selector
+   * @return {Element} select&#xB41C; element
+   */
+  find(target, selector) {
+    return target.querySelectorAll(selector);
+  }
+
+  /**
+   * target&#xC5D0; element&#xB97C; append&#xD55C;&#xB2E4;.
+   *
+   * @param {Element} target append&#xD560; target
+   * @param {string} htmlStr append&#xD560; child element string
+   * @param {Function} [callback = () =&gt; {}] append&#xD6C4; &#xD638;&#xCD9C;&#xD560; callback
+   * @return {Element} element instance
+   */
+  append(target, htmlStr, callback) {
+    const { count, children } = this.convertDom(htmlStr);
+    // count&#xB97C; loop&#xB3CC;&#xBA70; append child &#xC2E4;&#xD589;
+    for (let idx = 0; idx &lt; count; idx++) {
+      target.appendChild(children[idx]);
+    }
+
+    callback(htmlStr);
+    return this;
+  }
+
+  /**
+   * html string&#xB0B4; &#xC815;&#xBCF4;&#xB97C; &#xBC18;&#xD658;&#xD55C;&#xB2E4;.
+   * @param {string} htmlStr convert&#xD560; html string
+   * @returns {number} count childelement count
+   * @returns {Element} children child element
+   */
+  convertDom(htmlStr) {
+    const wrapper = document.createElement(&apos;div&apos;);
+    wrapper.innerHTML = htmlStr;
+
+    return {
+      count: wrapper.childElementCount,
+      children: wrapper.children,
+    };
+  }
+}
+
+module.exports = Element;
+
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

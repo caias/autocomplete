@@ -1,0 +1,30 @@
+{
+  "name": "@otom/elements",
+  "version": "0.0.1",
+  "description": "element class using otom",
+  "author": "유한승 <kern86@wemakeprice.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/element.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.wemakeprice.com:7999/tmfe/fe-otom.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "start": "babel ./lib/element.js --out-file dist/element.js ",
+    "clean:docs": "rimraf ./docs",
+    "docs": "npm run clean:docs && esdoc"
+  },
+  "dependencies": {}
+}

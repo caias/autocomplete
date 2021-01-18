@@ -2,7 +2,7 @@
   "name": "@otom/elements",
   "version": "0.0.1",
   "description": "element class using otom",
-  "author": "유한승 <kern86@wemakeprice.com>",
+  "author": "이강원 <caias@wemakeprice.com>",
   "homepage": "",
   "license": "ISC",
   "main": "dist/element.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@stash.wemakeprice.com:7999/tmfe/fe-otom.git"
+    "url": "git@github.com:caias/autocomplete.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

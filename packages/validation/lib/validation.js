@@ -1,7 +1,7 @@
 /**
  * autocomplete valdation 모듈
  *
- * @author caias, kern86
+ * @author caias
  * @since 2019.09.06 - draft
  * @example
  *  const valdation = require('@otom/validation');

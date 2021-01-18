@@ -16861,7 +16861,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * autocomplete elements 모듈\n *\n * @author caias, kern86\n * @since 2019.09.06 - draft\n * @example\n *  const Element = require('@otom/elements');\n *  // single module\n *  const element = new Element('input', 'div');\n *  element.css('top', '30px');\n *\n *  // use extends\n *  class El extends Element {\n *    constructor() {\n *      super(el, root);\n *    }\n *\n *    init() {\n *      this.css('top', '30px');\n *    }\n *  }\n ",
+            "value": "*\n * autocomplete elements 모듈\n *\n * @author caias\n * @since 2019.09.06 - draft\n * @example\n *  const Element = require('@otom/elements');\n *  // single module\n *  const element = new Element('input', 'div');\n *  element.css('top', '30px');\n *\n *  // use extends\n *  class El extends Element {\n *    constructor() {\n *      super(el, root);\n *    }\n *\n *    init() {\n *      this.css('top', '30px');\n *    }\n *  }\n ",
             "start": 0,
             "end": 426,
             "loc": {
@@ -16882,7 +16882,7 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * autocomplete elements 모듈\n *\n * @author caias, kern86\n * @since 2019.09.06 - draft\n * @example\n *  const Element = require('@otom/elements');\n *  // single module\n *  const element = new Element('input', 'div');\n *  element.css('top', '30px');\n *\n *  // use extends\n *  class El extends Element {\n *    constructor() {\n *      super(el, root);\n *    }\n *\n *    init() {\n *      this.css('top', '30px');\n *    }\n *  }\n ",
+      "value": "*\n * autocomplete elements 모듈\n *\n * @author caias\n * @since 2019.09.06 - draft\n * @example\n *  const Element = require('@otom/elements');\n *  // single module\n *  const element = new Element('input', 'div');\n *  element.css('top', '30px');\n *\n *  // use extends\n *  class El extends Element {\n *    constructor() {\n *      super(el, root);\n *    }\n *\n *    init() {\n *      this.css('top', '30px');\n *    }\n *  }\n ",
       "start": 0,
       "end": 426,
       "loc": {
@@ -17236,7 +17236,7 @@
   "tokens": [
     {
       "type": "CommentBlock",
-      "value": "*\n * autocomplete elements 모듈\n *\n * @author caias, kern86\n * @since 2019.09.06 - draft\n * @example\n *  const Element = require('@otom/elements');\n *  // single module\n *  const element = new Element('input', 'div');\n *  element.css('top', '30px');\n *\n *  // use extends\n *  class El extends Element {\n *    constructor() {\n *      super(el, root);\n *    }\n *\n *    init() {\n *      this.css('top', '30px');\n *    }\n *  }\n ",
+      "value": "*\n * autocomplete elements 모듈\n *\n * @author caias\n * @since 2019.09.06 - draft\n * @example\n *  const Element = require('@otom/elements');\n *  // single module\n *  const element = new Element('input', 'div');\n *  element.css('top', '30px');\n *\n *  // use extends\n *  class El extends Element {\n *    constructor() {\n *      super(el, root);\n *    }\n *\n *    init() {\n *      this.css('top', '30px');\n *    }\n *  }\n ",
       "start": 0,
       "end": 426,
       "loc": {

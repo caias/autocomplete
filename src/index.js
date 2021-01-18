@@ -3,7 +3,7 @@
  *
  * @name Otom
  * @author caias
- * @contributors kern86
+ * @contributors caias
  * @since 2019.08.05 - draft
  * @example
  * // index.html

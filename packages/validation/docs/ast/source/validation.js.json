@@ -2831,7 +2831,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * autocomplete valdation 모듈\n *\n * @author caias, kern86\n * @since 2019.09.06 - draft\n * @example\n *  const valdation = require('@otom/validation');\n ",
+            "value": "*\n * autocomplete valdation 모듈\n *\n * @author caias\n * @since 2019.09.06 - draft\n * @example\n *  const valdation = require('@otom/validation');\n ",
             "start": 0,
             "end": 156,
             "loc": {
@@ -2870,7 +2870,7 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * autocomplete valdation 모듈\n *\n * @author caias, kern86\n * @since 2019.09.06 - draft\n * @example\n *  const valdation = require('@otom/validation');\n ",
+      "value": "*\n * autocomplete valdation 모듈\n *\n * @author caias\n * @since 2019.09.06 - draft\n * @example\n *  const valdation = require('@otom/validation');\n ",
       "start": 0,
       "end": 156,
       "loc": {
@@ -3048,7 +3048,7 @@
   "tokens": [
     {
       "type": "CommentBlock",
-      "value": "*\n * autocomplete valdation 모듈\n *\n * @author caias, kern86\n * @since 2019.09.06 - draft\n * @example\n *  const valdation = require('@otom/validation');\n ",
+      "value": "*\n * autocomplete valdation 모듈\n *\n * @author caias\n * @since 2019.09.06 - draft\n * @example\n *  const valdation = require('@otom/validation');\n ",
       "start": 0,
       "end": 156,
       "loc": {

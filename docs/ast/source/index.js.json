@@ -19007,7 +19007,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * autocomplete main module\n *\n * @name Otom\n * @author caias\n * @contributors kern86\n * @since 2019.08.05 - draft\n * @example\n * // index.html\n * <div data-otom-el=\"container\">\n *  <input type=\"email\" data-otom-el=\"input\" />\n *  <div data-otom-el=\"result\"></div>\n * </div>\n *\n * //js\n * const Otom = require('Otom');\n * const input = new Otom({\n *  el: '[data-otom-el=input]',\n *  container: '[data-otom-el=container]',\n *  result: '[data-otom-el=result]',\n *  type: 'email',\n * });\n ",
+            "value": "*\n * autocomplete main module\n *\n * @name Otom\n * @author caias\n * @contributors caias\n * @since 2019.08.05 - draft\n * @example\n * // index.html\n * <div data-otom-el=\"container\">\n *  <input type=\"email\" data-otom-el=\"input\" />\n *  <div data-otom-el=\"result\"></div>\n * </div>\n *\n * //js\n * const Otom = require('Otom');\n * const input = new Otom({\n *  el: '[data-otom-el=input]',\n *  container: '[data-otom-el=container]',\n *  result: '[data-otom-el=result]',\n *  type: 'email',\n * });\n ",
             "start": 0,
             "end": 491,
             "loc": {
@@ -19028,7 +19028,7 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * autocomplete main module\n *\n * @name Otom\n * @author caias\n * @contributors kern86\n * @since 2019.08.05 - draft\n * @example\n * // index.html\n * <div data-otom-el=\"container\">\n *  <input type=\"email\" data-otom-el=\"input\" />\n *  <div data-otom-el=\"result\"></div>\n * </div>\n *\n * //js\n * const Otom = require('Otom');\n * const input = new Otom({\n *  el: '[data-otom-el=input]',\n *  container: '[data-otom-el=container]',\n *  result: '[data-otom-el=result]',\n *  type: 'email',\n * });\n ",
+      "value": "*\n * autocomplete main module\n *\n * @name Otom\n * @author caias\n * @contributors caias\n * @since 2019.08.05 - draft\n * @example\n * // index.html\n * <div data-otom-el=\"container\">\n *  <input type=\"email\" data-otom-el=\"input\" />\n *  <div data-otom-el=\"result\"></div>\n * </div>\n *\n * //js\n * const Otom = require('Otom');\n * const input = new Otom({\n *  el: '[data-otom-el=input]',\n *  container: '[data-otom-el=container]',\n *  result: '[data-otom-el=result]',\n *  type: 'email',\n * });\n ",
       "start": 0,
       "end": 491,
       "loc": {
@@ -19462,7 +19462,7 @@
   "tokens": [
     {
       "type": "CommentBlock",
-      "value": "*\n * autocomplete main module\n *\n * @name Otom\n * @author caias\n * @contributors kern86\n * @since 2019.08.05 - draft\n * @example\n * // index.html\n * <div data-otom-el=\"container\">\n *  <input type=\"email\" data-otom-el=\"input\" />\n *  <div data-otom-el=\"result\"></div>\n * </div>\n *\n * //js\n * const Otom = require('Otom');\n * const input = new Otom({\n *  el: '[data-otom-el=input]',\n *  container: '[data-otom-el=container]',\n *  result: '[data-otom-el=result]',\n *  type: 'email',\n * });\n ",
+      "value": "*\n * autocomplete main module\n *\n * @name Otom\n * @author caias\n * @contributors caias\n * @since 2019.08.05 - draft\n * @example\n * // index.html\n * <div data-otom-el=\"container\">\n *  <input type=\"email\" data-otom-el=\"input\" />\n *  <div data-otom-el=\"result\"></div>\n * </div>\n *\n * //js\n * const Otom = require('Otom');\n * const input = new Otom({\n *  el: '[data-otom-el=input]',\n *  container: '[data-otom-el=container]',\n *  result: '[data-otom-el=result]',\n *  type: 'email',\n * });\n ",
       "start": 0,
       "end": 491,
       "loc": {

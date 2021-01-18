@@ -25143,7 +25143,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * autocomplete reulst list 모듈\n *\n * @author caias, kern86\n * @since 2019.09.06 - draft\n * @example\n *  const Result = require('@otom/result');\n *  const result = new Result({\n *\n *  });\n ",
+            "value": "*\n * autocomplete reulst list 모듈\n *\n * @author caias\n * @since 2019.09.06 - draft\n * @example\n *  const Result = require('@otom/result');\n *  const result = new Result({\n *\n *  });\n ",
             "start": 0,
             "end": 194,
             "loc": {
@@ -25164,7 +25164,7 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * autocomplete reulst list 모듈\n *\n * @author caias, kern86\n * @since 2019.09.06 - draft\n * @example\n *  const Result = require('@otom/result');\n *  const result = new Result({\n *\n *  });\n ",
+      "value": "*\n * autocomplete reulst list 모듈\n *\n * @author caias\n * @since 2019.09.06 - draft\n * @example\n *  const Result = require('@otom/result');\n *  const result = new Result({\n *\n *  });\n ",
       "start": 0,
       "end": 194,
       "loc": {
@@ -25710,7 +25710,7 @@
   "tokens": [
     {
       "type": "CommentBlock",
-      "value": "*\n * autocomplete reulst list 모듈\n *\n * @author caias, kern86\n * @since 2019.09.06 - draft\n * @example\n *  const Result = require('@otom/result');\n *  const result = new Result({\n *\n *  });\n ",
+      "value": "*\n * autocomplete reulst list 모듈\n *\n * @author caias\n * @since 2019.09.06 - draft\n * @example\n *  const Result = require('@otom/result');\n *  const result = new Result({\n *\n *  });\n ",
       "start": 0,
       "end": 194,
       "loc": {

@@ -2,7 +2,7 @@
  * autocomplete reulst list 모듈
  *
  * @author caias
- * @contributors kern86
+ * @contributors caias
  * @since 2019.09.06 - draft
  * @example
  *  const Result = require('@otom/result');

@@ -31,6 +31,6 @@
     "@otom/elements": "file:../elements",
     "@otom/result": "file:../result",
     "chai": "^4.2.0",
-    "mocha": "^6.2.0"
+    "mocha": "^10.2.0"
   }
 }
